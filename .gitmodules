@@ -1,0 +1,6 @@
+[submodule "packages/acore-astro"]
+	path = packages/acore-astro
+	url = https://github.com/ahmet-cetinkaya/acore-astro
+[submodule "packages/acore-solid"]
+	path = packages/acore-solid
+	url = https://github.com/ahmet-cetinkaya/acore-solid
