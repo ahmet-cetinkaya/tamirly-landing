@@ -1,7 +1,44 @@
 {
-  "dependencies": {},
+  "name": "tamirly-landing",
+  "version": "1.0.0",
+  "description": "Tamirly Landing Page - Offline appliance error code database for HVAC technicians and DIYers",
+  "private": true,
+  "license": "GPL-3.0",
+  "author": {
+    "name": "Ahmet Çetinkaya",
+    "email": "contact@ahmetcetinkaya.me",
+    "url": "https://ahmetcetinkaya.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahmetcetinkaya/tamirly-landing"
+  },
+  "type": "module",
+  "scripts": {
+    "format": "./scripts/format.sh",
+    "format:check": "prettier --check \"**/*.{js,ts,tsx,jsx,mjs,cjs,astro,md,json,yaml,yml}\" --ignore-path=.gitignore --ignore-path=.prettierignore",
+    "format:write": "prettier --write \"**/*.{js,ts,tsx,jsx,mjs,cjs,astro,md,json,yaml,yml}\" --ignore-path=.gitignore --ignore-path=.prettierignore",
+    "landing:dev": "cd src/presentation/Tamirly.LandingWebUI && npm run dev",
+    "landing:build": "cd src/presentation/Tamirly.LandingWebUI && npm run build",
+    "landing:preview": "cd src/presentation/Tamirly.LandingWebUI && npm run preview"
+  },
   "devDependencies": {
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1"
-  }
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "bun": ">=1.0.0"
+  },
+  "keywords": [
+    "tamirly",
+    "landing-page",
+    "astro",
+    "hvac",
+    "appliance",
+    "repair",
+    "error-codes",
+    "offline",
+    "technician"
+  ]
 }
