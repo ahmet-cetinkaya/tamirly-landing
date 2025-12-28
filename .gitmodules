@@ -4,3 +4,6 @@
 [submodule "packages/acore-solid"]
 	path = packages/acore-solid
 	url = https://github.com/ahmet-cetinkaya/acore-solid
+[submodule "packages/acore-scripts"]
+	path = packages/acore-scripts
+	url = https://github.com/ahmet-cetinkaya/acore-scripts
