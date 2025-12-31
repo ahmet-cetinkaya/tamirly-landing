@@ -8,9 +8,12 @@ import path from "path";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+import sitemap from "@astrojs/sitemap";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [solidJs()],
+  site: "https://tamirly.ahmetcetinkaya.me",
+  integrations: [solidJs(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
     resolve: {
