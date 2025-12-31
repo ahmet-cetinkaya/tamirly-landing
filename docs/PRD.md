@@ -343,7 +343,7 @@ CTA: "Download for Android" button
 Title Tag: "Tamirly - Offline Appliance Error Code Database"
 Meta Description: "Diagnose appliance errors offline. 50+ brands, 1000+ codes.
                    The tool for HVAC technicians and DIYers. Download free."
-Canonical URL: https://tamirly.app/
+Canonical URL: https://tamirly.ahmetcetinkaya.me/
 ```
 
 **Schema Markup**:
