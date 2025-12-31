@@ -21,7 +21,7 @@ const PhoneFrame: Component<PhoneFrameProps> = (props) => {
       </Show>
 
       {/* Screen Content */}
-      <div class="w-full h-full bg-background-dark flex flex-col relative overflow-hidden pt-10 pb-4">
+      <div class="w-full h-full flex flex-col relative overflow-hidden pt-10 pb-4 bg-background">
         {merged.children}
       </div>
     </div>
