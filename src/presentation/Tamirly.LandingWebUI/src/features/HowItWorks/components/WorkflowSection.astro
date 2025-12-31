@@ -1,5 +1,6 @@
 ---
 import AnimatedSection from "../../../../../../../packages/acore-astro/src/components/AnimatedSection.astro";
+import { getImage } from "astro:assets";
 import WorkflowStep from "./WorkflowStep";
 import { i18nInstance } from "../../../shared/i18n/instance";
 import { TranslationKeys } from "../../../shared/i18n/enums/TranslationKeys";
@@ -30,14 +31,23 @@ const { locale } = Astro.props;
 const t = (key: TranslationKeys) => i18nInstance.translate(locale, key);
 
 const isTr = locale === LocalesEnum.TR;
-const step1ImgDark = isTr ? step1TrDark.src : step1EnDark.src;
-const step1ImgLight = isTr ? step1TrLight.src : step1EnLight.src;
+const step1ImgDarkSrc = isTr ? step1TrDark : step1EnDark;
+const step1ImgLightSrc = isTr ? step1TrLight : step1EnLight;
 
-const step2ImgDark = isTr ? step2TrDark.src : step2EnDark.src;
-const step2ImgLight = isTr ? step2TrLight.src : step2EnLight.src;
+const step2ImgDarkSrc = isTr ? step2TrDark : step2EnDark;
+const step2ImgLightSrc = isTr ? step2TrLight : step2EnLight;
 
-const step3ImgDark = isTr ? step3TrDark.src : step3EnDark.src;
-const step3ImgLight = isTr ? step3TrLight.src : step3EnLight.src;
+const step3ImgDarkSrc = isTr ? step3TrDark : step3EnDark;
+const step3ImgLightSrc = isTr ? step3TrLight : step3EnLight;
+
+const [step1ImgDark, step1ImgLight, step2ImgDark, step2ImgLight, step3ImgDark, step3ImgLight] = await Promise.all([
+  getImage({ src: step1ImgDarkSrc, format: "webp", width: 200 }),
+  getImage({ src: step1ImgLightSrc, format: "webp", width: 200 }),
+  getImage({ src: step2ImgDarkSrc, format: "webp", width: 200 }),
+  getImage({ src: step2ImgLightSrc, format: "webp", width: 200 }),
+  getImage({ src: step3ImgDarkSrc, format: "webp", width: 200 }),
+  getImage({ src: step3ImgLightSrc, format: "webp", width: 200 }),
+]).then((images) => images.map((img) => img.src));
 ---
 
 <section class="py-24 bg-background border-t border-border-color" id="how-it-works">

@@ -3,7 +3,7 @@
 
 :root {
   /* Light Mode Defaults */
-  --background: #ffffff;
+  --background: #F6F9F8;
   --surface: #f4f4f5;
   /* zinc-100 */
   --text-main: #18181b;
@@ -20,13 +20,14 @@
 
 .dark {
   /* Dark Mode Overrides */
-  --background: #101c22;
+  --background: #101B21;
   --surface: #1a2831;
   --text-main: #f4f4f5;
   /* zinc-100 */
-  --text-muted: #a1a1aa;
-  /* zinc-400 */
+  --text-muted: #d4d4d8;
+  /* zinc-400 -> zinc-300 to ensure AAA */
   --border: #3f3f46;
+  /* zinc-700 -> keep or darken slightly if needed for border contrast against background */
   /* zinc-700 */
 }
 

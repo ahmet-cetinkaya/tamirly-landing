@@ -6,13 +6,39 @@ import WorkflowSection from "../../features/HowItWorks/components/WorkflowSectio
 import BrandsSection from "../../features/SupportedBrands/components/BrandsSection.astro";
 import CTASection from "../../features/CTA/components/CTASection.astro";
 import { Locales } from "../../shared/i18n/enums/Locales";
+import { i18nInstance } from "../../shared/i18n/instance";
+import { TranslationKeys } from "../../shared/i18n/enums/TranslationKeys";
+import { APP_DOWNLOAD_LINK } from "../../shared/constants";
 
 // Simple detection: if URL starts with /tr, it's TR
 const pathname = Astro.url.pathname;
 const currentLocale = pathname.startsWith("/tr") ? Locales.TR : Locales.EN;
+
+const t = (key: TranslationKeys) => i18nInstance.translate(currentLocale, key);
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Tamirly",
+  applicationCategory: "UtilitiesApplication",
+  operatingSystem: "Android",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  description:
+    t(TranslationKeys.HERO_DESCRIPTION_PLAIN) || "Find appliance error codes & solutions. Offline repair guide.",
+  installUrl: APP_DOWNLOAD_LINK,
+  author: {
+    "@type": "Person",
+    name: "Ahmet Cetinkaya",
+    url: "https://ahmetcetinkaya.me",
+  },
+};
 ---
 
-<LandingLayout locale={currentLocale}>
+<LandingLayout locale={currentLocale} structuredData={structuredData} title={t(TranslationKeys.PAGE_TITLE)}>
   <HeroSection locale={currentLocale} />
   <FeaturesSection locale={currentLocale} />
   <WorkflowSection locale={currentLocale} />

@@ -13,24 +13,28 @@ interface Props {
   title?: string;
   description?: string;
   locale?: Locales;
+  structuredData?: Record<string, unknown>;
 }
 
 const {
   title = "Tamirly: Repair Guide",
   description = "Find appliance error codes & solutions. Offline repair guide.",
   locale = LocalesEnum.EN,
+  structuredData,
 } = Astro.props;
 ---
 
 <html lang={locale}>
   <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <script is:inline>
       function applyTheme() {
         const theme = localStorage.getItem("theme");
         const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
         if (theme === "dark" || (!theme && systemDark)) {
-          console.log("Applying dark (initial)");
+          // Applying dark (initial)
           document.documentElement.classList.add("dark");
         } else {
           document.documentElement.classList.remove("dark");
@@ -42,7 +46,7 @@ const {
         const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
         if (theme === "dark" || (!theme && systemDark)) {
-          console.log("Applying dark (swap)");
+          // Applying dark (swap)
           event.newDocument.documentElement.classList.add("dark");
         } else {
           event.newDocument.documentElement.classList.remove("dark");
@@ -52,8 +56,6 @@ const {
       applyTheme();
       document.addEventListener("astro:before-swap", handleSwap);
     </script>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <ClientRouter />
 
@@ -65,7 +67,12 @@ const {
       rel="stylesheet"
     />
     <Analytics />
-    <Metadata title={title} description={description} site="https://tamirly.ahmetcetinkaya.me" />
+    <Metadata
+      title={title}
+      description={description}
+      site="https://tamirly.ahmetcetinkaya.me"
+      structuredData={structuredData}
+    />
   </head>
   <body
     class="bg-background-dark font-sans text-text-main transition-colors duration-300 antialiased selection:bg-primary selection:text-white"

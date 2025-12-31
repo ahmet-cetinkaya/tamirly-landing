@@ -8,9 +8,13 @@ import path from "path";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+import sitemap from "@astrojs/sitemap";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [solidJs()],
+  site: "https://tamirly.ahmetcetinkaya.me",
+  compressHTML: true,
+  integrations: [solidJs(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
     resolve: {
@@ -21,6 +25,11 @@ export default defineConfig({
         "acore-solid": path.resolve(__dirname, "../../../packages/acore-solid"),
         "acore-ts": path.resolve(__dirname, "../../../packages/acore-ts"),
       },
+    },
+  },
+  image: {
+    service: {
+      entrypoint: "astro/assets/services/sharp",
     },
   },
 });
