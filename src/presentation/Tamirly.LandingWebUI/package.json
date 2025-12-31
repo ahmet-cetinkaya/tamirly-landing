@@ -17,10 +17,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "landing:lighthouse": "cd src/presentation/Tamirly.LandingWebUI && bun run lighthouse",
-    "lighthouse": "CHROME_PATH=$HOME/.cache/ms-playwright/chromium-1200/chrome-linux64/chrome lhci autorun",
-    "lighthouse:collect": "CHROME_PATH=$HOME/.cache/ms-playwright/chromium-1200/chrome-linux64/chrome lhci collect",
-    "lighthouse:assert": "CHROME_PATH=$HOME/.cache/ms-playwright/chromium-1200/chrome-linux64/chrome lhci assert",
+    "lighthouse": "lhci autorun",
+    "lighthouse:collect": "lhci collect",
+    "lighthouse:assert": "lhci assert",
     "lighthouse:upload": "lhci upload"
   },
   "type": "module",

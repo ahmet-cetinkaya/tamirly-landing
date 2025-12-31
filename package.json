@@ -22,8 +22,8 @@
     "landing:build": "cd src/presentation/Tamirly.LandingWebUI && npm run build",
     "landing:preview": "cd src/presentation/Tamirly.LandingWebUI && npm run preview",
     "landing:lighthouse": "cd src/presentation/Tamirly.LandingWebUI && bun run lighthouse",
-    "landing:lighthouse:collect": "cd src/presentation/Tamirly.LandingWebUI && npm run lighthouse:collect",
-    "landing:lighthouse:assert": "cd src/presentation/Tamirly.LandingWebUI && npm run lighthouse:assert",
+    "landing:lighthouse:collect": "cd src/presentation/Tamirly.LandingWebUI && bun run lighthouse:collect",
+    "landing:lighthouse:assert": "cd src/presentation/Tamirly.LandingWebUI && bun run lighthouse:assert",
     "lint": "./scripts/lint.sh",
     "lint:fix": "./scripts/lint.sh --fix",
     "screenshot:capture": "bun scripts/take-screenshot.ts"
