@@ -26,6 +26,10 @@
     "landing:lighthouse:assert": "cd src/presentation/Tamirly.LandingWebUI && bun run lighthouse:assert",
     "lint": "./scripts/lint.sh",
     "lint:fix": "./scripts/lint.sh --fix",
+    "release": "./scripts/create-release.sh",
+    "release:major": "./scripts/create-release.sh major",
+    "release:minor": "./scripts/create-release.sh minor",
+    "release:patch": "./scripts/create-release.sh patch",
     "screenshot:capture": "bun scripts/take-screenshot.ts"
   },
   "devDependencies": {
