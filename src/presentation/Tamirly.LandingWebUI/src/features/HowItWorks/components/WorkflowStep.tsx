@@ -8,7 +8,6 @@ export interface WorkflowStepProps {
   variant: "select-appliance" | "enter-code" | "fix-it";
   imageSrcDark: string;
   imageSrcLight: string;
-  delay?: number;
 }
 
 const WorkflowStep: Component<WorkflowStepProps> = (props) => {
