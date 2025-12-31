@@ -1,0 +1,63 @@
+---
+import Metadata from "../../../../../packages/acore-astro/src/components/Metadata.astro";
+import { ClientRouter } from "astro:transitions";
+import Navbar from "../features/Navigation/components/Navbar.astro";
+import Footer from "../features/Footer/components/Footer.astro";
+import "../styles/global.css";
+
+import type { Locales } from "../shared/i18n/enums/Locales";
+import { Locales as LocalesEnum } from "../shared/i18n/enums/Locales";
+
+interface Props {
+  title?: string;
+  description?: string;
+  locale?: Locales;
+}
+
+const {
+  title = "Tamirly: Repair Guide",
+  description = "Find appliance error codes & solutions. Offline repair guide.",
+  locale = LocalesEnum.EN,
+} = Astro.props;
+---
+
+<html lang={locale}>
+  <head>
+    <script is:inline>
+      (function () {
+        const theme = localStorage.getItem("theme");
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        if (theme === "dark" || (!theme && systemDark)) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      })();
+    </script>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <ClientRouter />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <Metadata title={title} description={description} site="https://tamirly.app" />
+  </head>
+  <body
+    class="bg-background-dark font-sans text-text-main transition-colors duration-300 antialiased selection:bg-primary selection:text-white"
+  >
+    <Navbar locale={locale} />
+
+    <main>
+      <slot />
+    </main>
+
+    <Footer locale={locale} />
+  </body>
+</html>

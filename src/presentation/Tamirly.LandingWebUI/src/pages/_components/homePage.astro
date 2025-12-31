@@ -1,0 +1,21 @@
+---
+import LandingLayout from "../../layouts/LandingLayout.astro";
+import HeroSection from "../../features/Hero/components/HeroSection.astro";
+import FeaturesSection from "../../features/Features/components/FeaturesSection.astro";
+import WorkflowSection from "../../features/HowItWorks/components/WorkflowSection.astro";
+import BrandsSection from "../../features/SupportedBrands/components/BrandsSection.astro";
+import CTASection from "../../features/CTA/components/CTASection.astro";
+import { Locales } from "../../shared/i18n/enums/Locales";
+
+// Simple detection: if URL starts with /tr, it's TR
+const pathname = Astro.url.pathname;
+const currentLocale = pathname.startsWith("/tr") ? Locales.TR : Locales.EN;
+---
+
+<LandingLayout locale={currentLocale}>
+  <HeroSection locale={currentLocale} />
+  <FeaturesSection locale={currentLocale} />
+  <WorkflowSection locale={currentLocale} />
+  <BrandsSection locale={currentLocale} />
+  <CTASection locale={currentLocale} />
+</LandingLayout>

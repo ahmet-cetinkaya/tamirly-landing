@@ -4,6 +4,10 @@
   "exclude": ["dist"],
   "compilerOptions": {
     "jsx": "preserve",
-    "jsxImportSource": "solid-js"
+    "jsxImportSource": "solid-js",
+    "paths": {
+      "acore-solid/*": ["../../../packages/acore-solid/*"],
+      "acore-ts/*": ["../../../packages/acore-ts/*"]
+    }
   }
 }

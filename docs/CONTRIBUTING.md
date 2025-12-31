@@ -1,6 +1,7 @@
 # Contributing to Tamirly Landing
 
-Thank you for your interest in contributing to Tamirly Landing! This document provides guidelines and instructions for contributing effectively.
+Thank you for your interest in contributing to Tamirly Landing! This document
+provides guidelines and instructions for contributing effectively.
 
 ## Table of Contents
 
@@ -140,7 +141,7 @@ const { title, description } = Astro.props;
 
 ### Commit Message Format
 
-```
+```text
 type: subject
 
 body

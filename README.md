@@ -1,14 +1,19 @@
-<img src="docs/assets/tamirly-app-icon.png" height="128" alt="Tamirly App Icon">
-
 # `Tamirly Landing` ![GitHub](https://img.shields.io/github/license/ahmetcetinkaya/tamirly-landing) ![GPL v3](https://img.shields.io/badge/license-GPLv3-blue) [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?&logo=buy-me-a-coffee&logoColor=black)](https://ahmetcetinkaya.me/donate)
 
-This repository contains the official landing page for **Tamirly** - an offline-first mobile application that serves as a comprehensive database for electronic appliance error codes, their meanings, and recommended solution steps.
+![Tamirly App Icon](docs/assets/tamirly-app-icon.png)
 
-The landing page serves as the primary gateway for technicians and DIYers to discover, understand, and download Tamirly from Google Play Store and F-Droid.
+This repository contains the official landing page for **Tamirly** - an
+offline-first mobile application that serves as a comprehensive database for
+electronic appliance error codes, their meanings, and recommended solution steps.
+
+The landing page serves as the primary gateway for technicians and DIYers to
+discover, understand, and download Tamirly from Google Play Store and F-Droid.
 
 ## 🌐 About
 
-This landing page is built with modern web technologies to provide fast performance, responsive design, WCAG 2.1 AA accessibility, and SEO optimization - all with a privacy-focused, self-hosting ready approach.
+This landing page is built with modern web technologies to provide fast
+performance, responsive design, WCAG 2.1 AA accessibility, and SEO
+optimization - all with a privacy-focused, self-hosting ready approach.
 
 **Tech Stack**: AstroJS v5.16+, TypeScript, Bun, component-scoped CSS
 
@@ -27,10 +32,10 @@ bun run landing:dev  # Visit http://localhost:4321
 
 ## 📚 Documentation
 
-| Document                                          | Description                              |
-| ------------------------------------------------- | ---------------------------------------- |
-| **[Project Structure](docs/ProjectStructure.md)** | Architecture, layout, and component docs |
-| **[Landing Page PRD](docs/LandingPage.PRD.md)**   | Landing page specifications              |
+| Document                                  | Description                     |
+| ----------------------------------------- | ------------------------------- |
+| **[Structure](docs/ProjectStructure.md)** | Architecture and component docs |
+| **[PRD](docs/LandingPage.PRD.md)**        | Landing page specifications     |
 
 ## 🎨 Key Features
 

@@ -7,3 +7,6 @@
 [submodule "packages/acore-scripts"]
 	path = packages/acore-scripts
 	url = https://github.com/ahmet-cetinkaya/acore-scripts
+[submodule "packages/acore-ts"]
+	path = packages/acore-ts
+	url = https://github.com/ahmet-cetinkaya/acore-ts
