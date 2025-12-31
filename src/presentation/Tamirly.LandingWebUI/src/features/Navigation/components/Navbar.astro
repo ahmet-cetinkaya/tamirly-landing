@@ -31,7 +31,7 @@ const links = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-20">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-3">
+      <a href={locale === LocalesEnum.TR ? "/tr/" : "/"} class="flex items-center gap-3">
         <img alt="Tamirly Icon" class="w-10 h-10 object-contain" src="/favicon.svg" />
         <span class="text-2xl font-bold tracking-tight text-primary">Tamirly</span>
       </a>
