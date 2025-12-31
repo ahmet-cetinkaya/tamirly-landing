@@ -14,7 +14,7 @@ business objectives, audience, technical specs, and development phases.
 The Tamirly landing page serves as the primary web presence and conversion engine
 for the Tamirly mobile application. It effectively communicates the app's value
 proposition to technicians and DIYers, driving downloads from both
-Google Play Store and F-Droid.
+Google Play Store.
 
 ## Business Objectives
 
@@ -23,7 +23,7 @@ Google Play Store and F-Droid.
 - **Conversion Rate**: Achieve 15% download conversion from visitor to app install
 - **Traffic**: Generate 5,000+ monthly visitors through organic and paid channels
 - **Brand Awareness**: Establish Tamirly as the go-to offline repair tool
-- **Dual Distribution**: Balance traffic between Google Play and F-Droid
+- **Distribution**: Drive high-quality traffic to Google Play Store
 
 ### Success Metrics
 
@@ -463,8 +463,7 @@ Canonical URL: https://tamirly.app/
 
 **Download Destinations**:
 
-- Google Play Store: Primary link (70-80% of users)
-- F-Droid: Secondary link (20-30% of users)
+- Google Play Store: Primary link
 - Direct APK: Optional for advanced users
 
 ### Trust Signals
@@ -508,7 +507,7 @@ Canonical URL: https://tamirly.app/
 - ✅ Complete responsive HTML implementation
 - ✅ Tailwind CSS styling with custom config
 - ✅ All content sections from mockup
-- ✅ Google Play Store and F-Droid download links
+- ✅ Google Play Store download links
 - ✅ Basic SEO meta tags
 - ✅ Accessibility compliance (WCAG 2.1 AA)
 
@@ -635,7 +634,6 @@ Canonical URL: https://tamirly.app/
 **Risk**: App store approval delays
 **Mitigation**:
 
-- F-Droid as alternative distribution
 - Direct APK download option
 - Clear communication of timeline
 
@@ -647,7 +645,7 @@ Canonical URL: https://tamirly.app/
 
 - Final app screenshots from development team
 - App store listing text and assets
-- Download link URLs (Play Store, F-Droid)
+- Download link URLs (Play Store)
 - Brand approval for logo usage
 
 ### External Dependencies
@@ -698,7 +696,7 @@ Canonical URL: https://tamirly.app/
 **Tamirly Differentiation**:
 
 - Offline-first messaging (unique positioning)
-- Dual distribution (Play Store + F-Droid)
+- Google Play distribution focus
 - Clean, modern dark theme
 - Interactive product showcase
 

@@ -34,7 +34,7 @@ business objectives, audience, technical specs, and development phases.
 1. **Product Vision** (Lines 10-13)
    - Primary web presence and conversion engine
    - Target: HVAC technicians and DIYers
-   - Dual distribution: Google Play + F-Droid
+   - Primary distribution: Google Play
 
 2. **Business Objectives** (Lines 15-29)
    - 15% download conversion rate

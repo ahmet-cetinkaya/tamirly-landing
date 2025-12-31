@@ -5,6 +5,7 @@
         "**/node_modules/**",
         "**/packages/**",
         "**/dist/**",
-        "**/.astro/**"
+        "**/.astro/**",
+        "./README.md"
     ]
 }
