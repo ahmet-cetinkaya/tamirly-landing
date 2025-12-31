@@ -69,7 +69,8 @@ export const translations: Translations = {
   },
   [TranslationKeys.FEATURES_DESCRIPTION]: {
     [Locales.EN]: "{appName} is built to work in the field. No signal? No problem. Get accurate diagnostics instantly.",
-    [Locales.TR]: "{appName} sahada çalışmak üzere tasarlandı. Sinyal yok mu? Sorun değil. Anında doğru teşhisler alın.",
+    [Locales.TR]:
+      "{appName} sahada çalışmak üzere tasarlandı. Sinyal yok mu? Sorun değil. Anında doğru teşhisler alın.",
   },
   [TranslationKeys.FEATURES_OFFLINE_TITLE]: {
     [Locales.EN]: "100% Offline Database",
@@ -178,7 +179,8 @@ export const translations: Translations = {
   },
   [TranslationKeys.CTA_DESCRIPTION]: {
     [Locales.EN]: "Download {appName} today and carry a complete library of appliance repair manuals in your pocket.",
-    [Locales.TR]: "{appName} uygulamasını bugün indirin ve tam bir cihaz tamir kılavuzu kütüphanesini cebinizde taşıyın.",
+    [Locales.TR]:
+      "{appName} uygulamasını bugün indirin ve tam bir cihaz tamir kılavuzu kütüphanesini cebinizde taşıyın.",
   },
   [TranslationKeys.CTA_BUTTON]: {
     [Locales.EN]: "Download for Android",

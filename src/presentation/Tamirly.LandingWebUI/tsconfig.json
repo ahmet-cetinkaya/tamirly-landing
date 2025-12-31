@@ -1,25 +1,14 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": [
-    ".astro/types.d.ts",
-    "**/*"
-  ],
-  "exclude": [
-    "dist"
-  ],
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"],
   "compilerOptions": {
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
     "paths": {
-      "acore-solid/*": [
-        "../../../packages/acore-solid/*"
-      ],
-      "acore-ts/*": [
-        "../../../packages/acore-ts/*"
-      ],
-      "acore-astro/*": [
-        "../../../packages/acore-astro/*"
-      ]
+      "acore-solid/*": ["../../../packages/acore-solid/*"],
+      "acore-ts/*": ["../../../packages/acore-ts/*"],
+      "acore-astro/*": ["../../../packages/acore-astro/*"]
     }
   }
 }

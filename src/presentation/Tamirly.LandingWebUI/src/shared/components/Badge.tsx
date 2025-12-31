@@ -50,7 +50,6 @@ const Badge: Component<BadgeProps> = (props) => {
   };
 
   const getClasses = () => {
-
     return `${styles.base} ${styles.variants[merged.variant as keyof typeof styles.variants][merged.color as keyof typeof styles.pulse]}`;
   };
 

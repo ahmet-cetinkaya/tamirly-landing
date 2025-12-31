@@ -12,8 +12,6 @@ PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 # Source acore-scripts format utilities
 ACORE_SCRIPTS_DIR="$PROJECT_ROOT/packages/acore-scripts/src"
 
-
-
 # Check if acore-scripts exists
 if [[ ! -d "$ACORE_SCRIPTS_DIR" ]]; then
   echo "❌ Error: acore-scripts not found at $ACORE_SCRIPTS_DIR"
