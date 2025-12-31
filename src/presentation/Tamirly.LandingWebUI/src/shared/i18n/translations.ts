@@ -224,4 +224,76 @@ export const translations: Translations = {
     [Locales.EN]: "All rights reserved.",
     [Locales.TR]: "Tüm hakları saklıdır.",
   },
+
+  // Privacy Policy
+  [TranslationKeys.PRIVACY_TITLE]: {
+    [Locales.EN]: "Privacy Policy",
+    [Locales.TR]: "Gizlilik Politikası",
+  },
+  [TranslationKeys.PRIVACY_LAST_UPDATED]: {
+    [Locales.EN]: "Last updated: December 2025",
+    [Locales.TR]: "Son güncelleme: Aralık 2025",
+  },
+  [TranslationKeys.PRIVACY_INTRO_TITLE]: {
+    [Locales.EN]: "1. Introduction",
+    [Locales.TR]: "1. Giriş",
+  },
+  [TranslationKeys.PRIVACY_INTRO_TEXT]: {
+    [Locales.EN]:
+      'Welcome to Tamirly ("we," "our," or "us"). We respect your privacy and are committed to protecting it through our compliance with this policy.',
+    [Locales.TR]:
+      'Tamirly\'ye ("biz", "bizim" veya "bize") hoş geldiniz. Gizliliğinize saygı duyuyoruz ve bu politikaya uyum sağlayarak gizliliğinizi korumaya kararlıyız.',
+  },
+  [TranslationKeys.PRIVACY_DATA_TITLE]: {
+    [Locales.EN]: "2. Data Collection",
+    [Locales.TR]: "2. Veri Toplama",
+  },
+  [TranslationKeys.PRIVACY_DATA_TEXT_1]: {
+    [Locales.EN]:
+      "Tamirly is an offline-first application. We do not collect, store, or share any personal data, usage data, or telemetry from your device.",
+    [Locales.TR]:
+      "Tamirly çevrimdışı öncelikli bir uygulamadır. Cihazınızdan herhangi bir kişisel veri, kullanım verisi veya telemetri toplamıyoruz, saklamıyoruz veya paylaşmıyoruz.",
+  },
+  [TranslationKeys.PRIVACY_DATA_TEXT_2]: {
+    [Locales.EN]:
+      "Because the app operates entirely offline after the initial download, we have no mechanism to track how you use the application, which error codes you search for, or any other activity within the app.",
+    [Locales.TR]:
+      "Uygulama ilk indirmeden sonra tamamen çevrimdışı çalıştığından, uygulamayı nasıl kullandığınızı, hangi hata kodlarını aradığınızı veya uygulama içindeki başka herhangi bir etkinliği izleme mekanizmamız yoktur.",
+  },
+  [TranslationKeys.PRIVACY_PERMISSIONS_TITLE]: {
+    [Locales.EN]: "3. Device Permissions",
+    [Locales.TR]: "3. Cihaz İzinleri",
+  },
+  [TranslationKeys.PRIVACY_PERMISSIONS_TEXT]: {
+    [Locales.EN]:
+      "The application may request basic permissions necessary for its core offline functionality (such as storage access to save user preferences locally), but this data never leaves your device.",
+    [Locales.TR]:
+      "Uygulama, temel çevrimdışı işlevselliği için gerekli temel izinleri (kullanıcı tercihlerini yerel olarak kaydetmek için depolama erişimi gibi) talep edebilir, ancak bu veriler asla cihazınızdan dışarı çıkmaz.",
+  },
+  [TranslationKeys.PRIVACY_THIRD_PARTY_TITLE]: {
+    [Locales.EN]: "4. Third-Party Services",
+    [Locales.TR]: "4. Üçüncü Taraf Hizmetleri",
+  },
+  [TranslationKeys.PRIVACY_THIRD_PARTY_TEXT]: {
+    [Locales.EN]:
+      "The application does not integrate with any third-party analytics, advertising, or tracking services.",
+    [Locales.TR]: "Uygulama, herhangi bir üçüncü taraf analiz, reklam veya izleme hizmetiyle entegre değildir.",
+  },
+  [TranslationKeys.PRIVACY_CONTACT_TITLE]: {
+    [Locales.EN]: "5. Contact Us",
+    [Locales.TR]: "5. İletişim",
+  },
+  [TranslationKeys.PRIVACY_CONTACT_TEXT]: {
+    [Locales.EN]: "If you have any questions about this Privacy Policy, please contact us at:",
+    [Locales.TR]:
+      "Bu Gizlilik Politikası hakkında herhangi bir sorunuz varsa, lütfen bizimle şu adresten iletişime geçin:",
+  },
+  [TranslationKeys.PRIVACY_CONTACT_SUBJECT]: {
+    [Locales.EN]: "Privacy Policy Question - Tamirly",
+    [Locales.TR]: "Gizlilik Politikası Sorusu - Tamirly",
+  },
+  [TranslationKeys.PRIVACY_CONTACT_BODY]: {
+    [Locales.EN]: "Hello Tamirly Team,\n\nI have a question about the privacy policy:\n",
+    [Locales.TR]: "Merhaba Tamirly Ekibi,\n\nGizlilik politikası hakkında bir sorum var:\n",
+  },
 };
