@@ -15,7 +15,6 @@ export default tseslint.config(
       ...jsxA11y.configs.recommended.rules,
       "no-console": "warn",
       "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
-      "jsx-a11y/anchor-is-valid": "warn", // Downgraded to warn for legacy code
     },
   },
   {
