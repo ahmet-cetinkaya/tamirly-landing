@@ -25,12 +25,18 @@ const WorkflowStep: Component<WorkflowStepProps> = (props) => {
           <img
             src={props.imageSrcLight}
             alt={props.title}
+            width="200"
+            height="430"
             class="w-full h-full object-contain rounded-2xl dark:hidden"
+            loading="lazy"
           />
           <img
             src={props.imageSrcDark}
             alt={props.title}
+            width="200"
+            height="430"
             class="w-full h-full object-contain rounded-2xl hidden dark:block"
+            loading="lazy"
           />
         </PhoneFrame>
       </div>

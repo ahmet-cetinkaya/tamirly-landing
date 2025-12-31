@@ -13,6 +13,7 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://tamirly.ahmetcetinkaya.me",
+  compressHTML: true,
   integrations: [solidJs(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
@@ -24,6 +25,11 @@ export default defineConfig({
         "acore-solid": path.resolve(__dirname, "../../../packages/acore-solid"),
         "acore-ts": path.resolve(__dirname, "../../../packages/acore-ts"),
       },
+    },
+  },
+  image: {
+    service: {
+      entrypoint: "astro/assets/services/sharp",
     },
   },
 });

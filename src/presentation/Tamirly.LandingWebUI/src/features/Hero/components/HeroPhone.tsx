@@ -11,13 +11,21 @@ const HeroPhone: Component<HeroPhoneProps> = (props) => {
       <PhoneFrame showNotch={false}>
         <img
           src={props.imageSrcLight}
-          alt="Tamirly App Screenshot"
+          alt="Tamirly App Screenshot Light Mode"
+          width="384"
+          height="832"
           class="w-full h-full object-contain rounded-2xl dark:hidden"
+          loading="eager"
+          fetchpriority="high"
         />
         <img
           src={props.imageSrcDark}
-          alt="Tamirly App Screenshot"
+          alt="Tamirly App Screenshot Dark Mode"
+          width="384"
+          height="832"
           class="w-full h-full object-contain rounded-2xl hidden dark:block"
+          loading="eager"
+          fetchpriority="high"
         />
       </PhoneFrame>
     </div>

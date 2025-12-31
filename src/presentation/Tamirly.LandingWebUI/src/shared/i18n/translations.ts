@@ -231,6 +231,12 @@ export const translations: Translations = {
     [Locales.TR]: "Tüm hakları saklıdır.",
   },
 
+  // Common
+  [TranslationKeys.PAGE_TITLE]: {
+    [Locales.EN]: "Tamirly: Repair Guide",
+    [Locales.TR]: "Tamirly: Tamir Rehberi",
+  },
+
   // Privacy Policy
   [TranslationKeys.PRIVACY_TITLE]: {
     [Locales.EN]: "Privacy Policy",

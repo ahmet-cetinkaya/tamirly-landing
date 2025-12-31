@@ -7,6 +7,7 @@
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.16.6",
     "clsx": "^2.1.1",
+    "sharp": "^0.34.5",
     "solid-js": "^1.9.10",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18"
@@ -15,7 +16,15 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "landing:lighthouse": "cd src/presentation/Tamirly.LandingWebUI && bun run lighthouse",
+    "lighthouse": "CHROME_PATH=$HOME/.cache/ms-playwright/chromium-1200/chrome-linux64/chrome lhci autorun",
+    "lighthouse:collect": "CHROME_PATH=$HOME/.cache/ms-playwright/chromium-1200/chrome-linux64/chrome lhci collect",
+    "lighthouse:assert": "CHROME_PATH=$HOME/.cache/ms-playwright/chromium-1200/chrome-linux64/chrome lhci assert",
+    "lighthouse:upload": "lhci upload"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "@lhci/cli": "^0.15.1"
+  }
 }

@@ -30,13 +30,16 @@ const LocaleSwitcherContent: Component<{ currentPath: string }> = (props) => {
       href={getTargetHref()}
       onClick={handleClick}
       class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface hover:bg-surface/80 border border-border-color transition-all text-sm font-medium text-text-main cursor-pointer no-underline"
-      aria-label="Switch Language"
     >
-      <span classList={{ "text-primary": locale() === Locales.EN, "text-text-muted": locale() !== Locales.EN }}>
+      <span
+        classList={{ "font-bold text-text-main": locale() === Locales.EN, "text-text-muted": locale() !== Locales.EN }}
+      >
         EN
       </span>
       <span class="text-text-muted/50">|</span>
-      <span classList={{ "text-primary": locale() === Locales.TR, "text-text-muted": locale() !== Locales.TR }}>
+      <span
+        classList={{ "font-bold text-text-main": locale() === Locales.TR, "text-text-muted": locale() !== Locales.TR }}
+      >
         TR
       </span>
     </a>

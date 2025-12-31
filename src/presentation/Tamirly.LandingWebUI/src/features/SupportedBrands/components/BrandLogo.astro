@@ -14,5 +14,6 @@ const processedSvg = svg.replace(/<svg/i, '<svg fill="currentColor"');
 <div
   class={`text-text-main fill-current flex items-center [&>svg]:h-full [&>svg]:w-auto ${className || ""}`}
   set:html={processedSvg}
+  role="img"
   aria-label={alt}
 />
