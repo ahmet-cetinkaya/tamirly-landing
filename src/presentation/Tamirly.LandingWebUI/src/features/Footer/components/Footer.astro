@@ -1,0 +1,88 @@
+---
+const currentYear = new Date().getFullYear();
+import { APP_DOWNLOAD_LINK, CONTACT_EMAIL } from "../../../shared/constants";
+import { i18nInstance } from "../../../shared/i18n/instance";
+import { TranslationKeys } from "../../../shared/i18n/enums/TranslationKeys";
+import type { Locales } from "../../../shared/i18n/enums/Locales";
+import { Locales as LocalesEnum } from "../../../shared/i18n/enums/Locales";
+
+interface Props {
+  locale?: Locales;
+}
+
+const { locale = LocalesEnum.EN } = Astro.props;
+const t = (key: TranslationKeys) => i18nInstance.translate(locale, key);
+
+const contactMailto = `mailto:${CONTACT_EMAIL}?subject=Contact - Tamirly&body=Hello Tamirly Team,%0A%0AFull Name: %0AMessage: %0A`;
+const suggestBrandMailto = `mailto:${CONTACT_EMAIL}?subject=Brand Suggestion - Tamirly&body=Hello Tamirly Team,%0A%0AManufacturer/Brand Name: %0AAppliance Category: %0AAdditional Details: %0A`;
+---
+
+<footer class="bg-surface-dark border-t border-gray-800 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+      <!-- Brand & Tagline -->
+      <div class="col-span-1 md:col-span-1">
+        <div class="flex items-center gap-3 mb-4">
+          <img src="/favicon.svg" alt="Tamirly Icon" class="w-10 h-10" />
+          <span class="text-2xl font-bold text-primary">Tamirly</span>
+        </div>
+        <p class="text-text-muted text-sm leading-relaxed">
+          {t(TranslationKeys.FOOTER_DESCRIPTION)}
+        </p>
+      </div>
+
+      <!-- Links Columns -->
+      <div>
+        <h4 class="font-bold text-text-main mb-4">{t(TranslationKeys.FOOTER_HEADER_PRODUCT)}</h4>
+        <ul class="space-y-2 text-sm text-text-muted">
+          <li>
+            <a class="hover:text-primary transition-colors" href="#features">{t(TranslationKeys.NAV_FEATURES)}</a>
+          </li>
+          <li>
+            <a class="hover:text-primary transition-colors" href="#brands">{t(TranslationKeys.NAV_SUPPORTED_BRANDS)}</a>
+          </li>
+          <li>
+            <a class="hover:text-primary transition-colors" href={APP_DOWNLOAD_LINK}
+              >{t(TranslationKeys.FOOTER_LINK_DOWNLOAD)}</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-text-main mb-4">{t(TranslationKeys.FOOTER_HEADER_SUPPORT)}</h4>
+        <ul class="space-y-2 text-sm text-text-muted">
+          <li>
+            <a class="hover:text-primary transition-colors" href={contactMailto}
+              >{t(TranslationKeys.FOOTER_LINK_CONTACT)}</a
+            >
+          </li>
+          <li>
+            <a class="hover:text-primary transition-colors" href={suggestBrandMailto}
+              >{t(TranslationKeys.FOOTER_LINK_SUGGEST)}</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-text-main mb-4">{t(TranslationKeys.FOOTER_HEADER_LEGAL)}</h4>
+        <ul class="space-y-2 text-sm text-text-muted">
+          <li>
+            <a class="hover:text-primary transition-colors" href="/privacy-policy"
+              >{t(TranslationKeys.FOOTER_LINK_PRIVACY)}</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-text-muted">
+        &copy; {currentYear} Tamirly. {t(TranslationKeys.FOOTER_COPYRIGHT)}
+      </p>
+      <!-- Socials could go here -->
+    </div>
+  </div>
+</footer>

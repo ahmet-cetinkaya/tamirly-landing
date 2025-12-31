@@ -8,12 +8,12 @@
 
 ## Quick Navigation
 
-| Document                                             | Purpose                     | Audience                   |
-| ---------------------------------------------------- | --------------------------- | -------------------------- |
-| [PRD.md](#prdmd)                                     | Landing page specifications | Developers, Designers, PMs |
-| [CONTRIBUTING.md](#contributingmd)                   | Contribution guidelines     | Contributors, Developers   |
-| [PROJECT_STRUCTURE.md](#project_structuremd)         | Architecture documentation  | Developers, Architects     |
-| [landing-page-mockup.html](#landing-page-mockuphtml) | HTML prototype              | Designers, Developers      |
+| Doc                                | Purpose    | Audience     |
+| ---------------------------------- | ---------- | ------------ |
+| [PRD](#prdmd)                      | Specs      | Devs, PMs    |
+| [CONTRIB](#contributingmd)         | Guidelines | Contributors |
+| [STRUC](#project_structuremd)      | Arch docs  | Developers   |
+| [mockup](#landing-page-mockuphtml) | Prototype  | Designers    |
 
 ---
 
@@ -26,14 +26,15 @@
 **Status**: Draft v1.0
 **Last Updated**: December 2025
 
-**Purpose**: Comprehensive specification for the Tamirly landing page, including business objectives, target audience, technical requirements, and development phases.
+**Purpose**: Comprehensive specification for the Tamirly landing page, including
+business objectives, audience, technical specs, and development phases.
 
 **Key Sections**:
 
 1. **Product Vision** (Lines 10-13)
    - Primary web presence and conversion engine
    - Target: HVAC technicians and DIYers
-   - Dual distribution: Google Play + F-Droid
+   - Primary distribution: Google Play
 
 2. **Business Objectives** (Lines 15-29)
    - 15% download conversion rate
@@ -80,7 +81,8 @@
 **Status**: Stable
 **Last Updated**: 2025-12-28
 
-**Purpose**: Guidelines and instructions for contributing to the Tamirly Landing project.
+**Purpose**: Guidelines and instructions for contributing to the Tamirly Landing
+project.
 
 **Key Sections**:
 
@@ -129,7 +131,8 @@
 **Status**: Stable v1.0.0
 **Last Updated**: 2025-12-28
 
-**Purpose**: Comprehensive documentation of the project's architecture, repository layout, and component design.
+**Purpose**: Documentation of the project's architecture, repository layout, and
+component design.
 
 **Key Sections**:
 
@@ -194,47 +197,37 @@
 **Status**: Complete
 **Last Updated**: 2025-12-28
 
-**Purpose**: Complete HTML implementation of the landing page using Tailwind CSS, serving as both a design reference and implementation guide.
-
-**Key Sections**:
+**Purpose**: HTML implementation of the landing page using Tailwind CSS,
+serving as a design reference and implementation guide.
 
 1. **Head Section** (Lines 1-100)
    - Meta tags and SEO configuration
    - Tailwind CSS CDN
-   - Custom CSS styles (animations, gradients)
-   - Font imports (Inter)
-
 2. **Navigation Bar** (Lines 101-180)
    - Fixed positioning with blur effect
    - Logo, navigation links, CTA button
    - Mobile-responsive design
-
 3. **Hero Section** (Lines 181-350)
    - Gradient text headline
    - Value proposition copy
    - Primary and secondary CTAs
    - Phone mockup with app preview
    - Trust badges and social proof
-
 4. **Features Section** (Lines 351-500)
    - 6 feature cards in grid layout
    - Icons with descriptions
    - Hover effects and animations
-
 5. **How It Works** (Lines 501-650)
    - 3-step process visualization
    - Phone mockups for each step
    - Connecting lines and animations
-
 6. **Supported Brands** (Lines 651-720)
    - Brand logos in flex layout
    - Grayscale to color on hover
-
 7. **Final CTA Section** (Lines 721-800)
    - Gradient background
    - Download call-to-action
    - Button with shadow effects
-
 8. **Footer** (Lines 801-950)
    - 4-column layout
    - Brand, Product, Support, Legal sections
@@ -264,7 +257,7 @@
 
 ## Document Relationships
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    PRD.md (Business)                       │
 │  • Product vision and objectives                           │
@@ -329,12 +322,12 @@
 
 ### Update Frequency
 
-| Document                 | Update Frequency | Trigger                              |
-| ------------------------ | ---------------- | ------------------------------------ |
-| PRD.md                   | Per phase        | Feature completion, strategy changes |
-| CONTRIBUTING.md          | As needed        | Workflow changes, new standards      |
-| PROJECT_STRUCTURE.md     | Major changes    | Architecture updates, new components |
-| landing-page-mockup.html | Per phase        | Design iterations, new sections      |
+| Document        | Frequency | Trigger                         |
+| --------------- | --------- | ------------------------------- |
+| PRD.md          | Per phase | Feature completion, strategy    |
+| CONTRIBUTING.md | As needed | Workflow changes, new standards |
+| STRUCTURE.md    | Major     | Architecture updates            |
+| mockup.html     | Per phase | Design iterations, new sections |
 
 ### Version Control
 
@@ -410,4 +403,4 @@ docs: update contributing guidelines with new standards
 
 ---
 
-**End of Index**
+## End of Index

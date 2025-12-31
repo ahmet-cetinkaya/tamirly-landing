@@ -1,0 +1,102 @@
+---
+import AnimatedSection from "../../../../../../../packages/acore-astro/src/components/AnimatedSection.astro";
+import Button from "../../../shared/components/Button";
+import Badge from "../../../shared/components/Badge";
+import Icon from "../../../shared/components/Icon";
+import HeroPhone from "./HeroPhone";
+import { APP_DOWNLOAD_LINK } from "../../../shared/constants";
+import { i18nInstance } from "../../../shared/i18n/instance";
+import { TranslationKeys } from "../../../shared/i18n/enums/TranslationKeys";
+import type { Locales } from "../../../shared/i18n/enums/Locales";
+import { Locales as LocalesEnum } from "../../../shared/i18n/enums/Locales";
+import screenshotEnDark from "../../../shared/assets/app-screenshots/en-US/dark/5.png";
+import screenshotEnLight from "../../../shared/assets/app-screenshots/en-US/light/5.png";
+import screenshotTrDark from "../../../shared/assets/app-screenshots/tr-TR/dark/5.png";
+import screenshotTrLight from "../../../shared/assets/app-screenshots/tr-TR/light/5.png";
+
+interface Props {
+  locale: Locales;
+}
+
+const { locale } = Astro.props;
+const t = (key: TranslationKeys) => i18nInstance.translate(locale, key);
+
+const isTr = locale === LocalesEnum.TR;
+const screenshotDark = isTr ? screenshotTrDark.src : screenshotEnDark.src;
+const screenshotLight = isTr ? screenshotTrLight.src : screenshotEnLight.src;
+---
+
+<section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden hero-gradient">
+  <!-- Circuit Pattern Overlay -->
+  <div class="absolute inset-0 bg-circuit-pattern opacity-100 pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Left Content -->
+      <div class="text-center lg:text-left space-y-8">
+        <AnimatedSection animation="fade-up" delay={0}>
+          <div class="inline-flex">
+            <Badge variant="subtle" color="primary" animatePulse>{t(TranslationKeys.HERO_BADGE_FREE)}</Badge>
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection animation="fade-up" delay={100}>
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight text-text-main">
+            {t(TranslationKeys.HERO_TITLE_LINE_1)}
+            <br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-300">
+              {t(TranslationKeys.HERO_TITLE_LINE_2)}
+            </span>
+          </h1>
+        </AnimatedSection>
+
+        <AnimatedSection animation="fade-up" delay={200}>
+          <p
+            class="text-lg sm:text-xl text-text-muted max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+            set:html={t(TranslationKeys.HERO_DESCRIPTION).replace(
+              "{appName}",
+              '<span class="text-primary font-bold">Tamirly</span>',
+            )}
+          />
+        </AnimatedSection>
+
+        <AnimatedSection animation="fade-up" delay={300}>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <Button href={APP_DOWNLOAD_LINK} size="lg" icon="download">{t(TranslationKeys.HERO_BTN_ANDROID)}</Button>
+            <Button href="#how-it-works" variant="secondary" size="lg" icon="play_circle"
+              >{t(TranslationKeys.HERO_BTN_HOW_IT_WORKS)}</Button
+            >
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection animation="fade-up" delay={400}>
+          <div class="pt-8 flex items-center justify-center lg:justify-start gap-6 text-text-muted text-sm">
+            <div class="flex items-center gap-2">
+              <Icon name="check_circle" class="fill-primary" size={20} />
+              <span>{t(TranslationKeys.HERO_FEATURE_OFFLINE)}</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <Icon name="check_circle" class="fill-primary" size={20} />
+              <span>{t(TranslationKeys.HERO_FEATURE_BRANDS)}</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <Icon name="check_circle" class="fill-primary" size={20} />
+              <span>{t(TranslationKeys.HERO_FEATURE_UPDATES)}</span>
+            </div>
+          </div>
+        </AnimatedSection>
+      </div>
+
+      <!-- Right Content (Phone Mockup) -->
+      <div class="relative lg:h-[700px] flex justify-center items-center">
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/20 rounded-full blur-3xl p-0 m-0"
+        >
+        </div>
+        <AnimatedSection animation="scale-up" delay={200} class="relative z-20">
+          <HeroPhone client:visible imageSrcDark={screenshotDark} imageSrcLight={screenshotLight} />
+        </AnimatedSection>
+      </div>
+    </div>
+  </div>
+</section>

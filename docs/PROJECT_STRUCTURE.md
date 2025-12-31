@@ -23,17 +23,22 @@
 
 ## Overview
 
-The Tamirly Landing project follows a **monorepo-with-submodules** architecture, where shared packages are maintained as external Git repositories and included as Git submodules. This approach provides clean separation between core libraries and application code while enabling code reuse across multiple projects.
+The Tamirly Landing project is a high-performance web application built with the
+Astro framework. It follows a modular architecture designed for scalability,
+maintainability, and optimal performance. This document outlines the project's
+organization and key architectural decisions.
+The project uses Git submodules for core libraries, allowing for independent
+versioning and shared usage across multiple projects.
 
 ### Key Architectural Principles
 
-| Principle                  | Implementation                                                               |
-| -------------------------- | ---------------------------------------------------------------------------- |
-| **Separation of Concerns** | Core packages (`packages/`) isolated from presentation (`src/presentation/`) |
-| **Code Reusability**       | Shared components via Git submodules                                         |
-| **Type Safety**            | TypeScript strict mode throughout                                            |
-| **Static-First**           | Pre-rendered HTML with minimal JavaScript                                    |
-| **Component Scoping**      | Scoped CSS in `.astro` files                                                 |
+| Principle       | Implementation                                         |
+| --------------- | ------------------------------------------------------ |
+| **Separation**  | Core (`packages/`) isolated from presentation (`src/`) |
+| **Reusability** | Shared components via Git submodules                   |
+| **Type Safety** | TypeScript strict mode throughout                      |
+| **Static**      | Pre-rendered HTML with minimal JavaScript              |
+| **Scoping**     | Scoped CSS in `.astro` files                           |
 
 ---
 
@@ -41,30 +46,31 @@ The Tamirly Landing project follows a **monorepo-with-submodules** architecture,
 
 ### Monorepo with Submodules
 
-Unlike traditional workspace-based monorepos (pnpm workspaces, npm packages), this project uses **Git submodules** for shared packages.
+Unlike traditional monorepos, this project uses **Git submodules** for shared
+packages.
 
 **Why This Approach?**
 
-| Benefit                    | Description                                                  |
-| -------------------------- | ------------------------------------------------------------ |
-| **Independent Versioning** | Each package tracks its own commit history                   |
-| **Clear Ownership**        | Packages live in separate repositories with their own issues |
-| **Selective Updates**      | Update specific packages without affecting others            |
-| **Simplified Publishing**  | Each package can be published independently                  |
-| **No Workspace Overhead**  | No need for package manager workspace configuration          |
+| Benefit    | Description                            |
+| ---------- | -------------------------------------- |
+| **Indep**  | Each package tracks its own history    |
+| **Owner**  | Separate repositories per package      |
+| **Update** | Update specific packages independently |
+| **Pub**    | Each package can be published alone    |
+| **Simple** | No workspace manager configuration     |
 
-**Trade-offs**
+### Trade-offs
 
-| Consideration                 | Impact                                             |
-| ----------------------------- | -------------------------------------------------- |
-| **Initialization Complexity** | Requires `git submodule update --init --recursive` |
-| **Commit Tracking**           | Submodules point to specific commits, not branches |
-| **Nested Commands**           | Development requires cd into nested directories    |
-| **Learning Curve**            | Developers must understand Git submodules          |
+| Detail     | Impact                                      |
+| ---------- | ------------------------------------------- |
+| **Setup**  | Needs `submodule update --init --recursive` |
+| **Commit** | Submodules point to commits, not branches   |
+| **Nested** | Dev requires cd into nested directories     |
+| **Curve**  | Developers must know Git submodules         |
 
 ### Layered Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Presentation Layer                       │
 │           (Tamirly.LandingWebUI - Astro Application)         │
@@ -97,7 +103,7 @@ Unlike traditional workspace-based monorepos (pnpm workspaces, npm packages), th
 
 ## Repository Layout
 
-```
+```text
 tamirly-landing/
 ├── 📄 Root Configuration
 │   ├── .gitignore              # Git ignore patterns
@@ -107,8 +113,7 @@ tamirly-landing/
 │   ├── package.json            # Root package config
 │   ├── prettier.config.mjs     # Prettier settings
 │   ├── README.md               # Public project README
-│   ├── LICENSE                 # GPL v3 license
-│   └── CLAUDE.md               # AI assistant guidance (gitignored)
+│   └── LICENSE                 # GPL v3 license
 │
 ├── 📁 Documentation (docs/)
 │   ├── ProjectStructure.md     # This file - architecture docs
@@ -160,17 +165,16 @@ tamirly-landing/
 
 **Purpose**: Repository-level configuration and documentation.
 
-| File/Directory        | Type   | Purpose                                           |
-| --------------------- | ------ | ------------------------------------------------- |
-| `.gitignore`          | Config | Git exclusions (IDE, dependencies, build outputs) |
-| `.gitmodules`         | Config | Git submodule repository mappings                 |
-| `.prettierignore`     | Config | Prettier formatting exclusions                    |
-| `bun.lock`            | Lock   | Bun dependency lockfile                           |
-| `package.json`        | Config | Root scripts, dev dependencies (prettier)         |
-| `prettier.config.mjs` | Config | Code formatting rules with Astro plugin           |
-| `README.md`           | Docs   | Public-facing project documentation               |
-| `LICENSE`             | Legal  | GNU General Public License v3.0                   |
-| `CLAUDE.md`           | Docs   | AI assistant guidance (gitignored)                |
+| File/Dir              | Type  | Purpose                            |
+| --------------------- | ----- | ---------------------------------- |
+| `.gitignore`          | Conf  | Git exclusions (IDE, build, etc.)  |
+| `.gitmodules`         | Conf  | Git submodule mappings             |
+| `.prettierignore`     | Conf  | Prettier exclusions                |
+| `bun.lock`            | Lock  | Bun lockfile                       |
+| `package.json`        | Conf  | Root scripts, dev dependencies     |
+| `prettier.config.mjs` | Conf  | Formatting rules with Astro plugin |
+| `README.md`           | Docs  | Public project documentation       |
+| `LICENSE`             | Legal | GNU GPL v3.0                       |
 
 **Key Scripts** (from `package.json`):
 
@@ -189,20 +193,20 @@ tamirly-landing/
 
 **Purpose**: Project requirements, specifications, and design artifacts.
 
-| File                  | Type      | Purpose                                | Size  |
-| --------------------- | --------- | -------------------------------------- | ----- |
-| `ProjectStructure.md` | Docs      | Architecture and structure (this file) | -     |
-| `LandingPage.PRD.md`  | PRD       | Landing page specifications            | ~19KB |
-| `TamirlyApp.PRD.md`   | PRD       | Mobile application requirements        | -     |
-| `mockup.html`         | Prototype | HTML implementation with Tailwind CSS  | ~39KB |
+| File          | Type | Purpose                  | Size  |
+| ------------- | ---- | ------------------------ | ----- |
+| `PROJECT.md`  | Docs | Architecture (this file) | -     |
+| `PRD.md`      | PRD  | Landing page specs       | ~19KB |
+| `APP.PRD.md`  | PRD  | Mobile app requirements  | -     |
+| `mockup.html` | Prot | HTML mockup w/ Tailwind  | ~39KB |
 
 ### Scripts Directory (`/scripts`)
 
 **Purpose**: Project automation and tooling scripts.
 
-| File        | Purpose                 | Dependencies                              |
-| ----------- | ----------------------- | ----------------------------------------- |
-| `format.sh` | Unified code formatting | acore-scripts, prettier, shfmt (optional) |
+| File        | Purpose                 | Dependencies             |
+| ----------- | ----------------------- | ------------------------ |
+| `format.sh` | Unified code formatting | scripts, prettier, shfmt |
 
 **Format Script Features**:
 
@@ -218,10 +222,10 @@ tamirly-landing/
 
 #### acore-astro
 
-**Repository**: https://github.com/ahmet-cetinkaya/acore-astro
+**Repository**: <https://github.com/ahmet-cetinkaya/acore-astro>
 **Purpose**: Reusable Astro components for landing pages and similar projects.
 
-```
+```text
 acore-astro/
 ├── src/
 │   └── components/
@@ -245,10 +249,10 @@ acore-astro/
 
 #### acore-scripts
 
-**Repository**: https://github.com/ahmet-cetinkaya/acore-scripts
+**Repository**: <https://github.com/ahmet-cetinkaya/acore-scripts>
 **Purpose**: Shared shell scripting utilities for formatting and logging.
 
-```
+```bash
 acore-scripts/
 ├── src/
 │   ├── format_sh.sh                 # Shell script formatting
@@ -270,10 +274,10 @@ source "${PROJECT_ROOT}/packages/acore-scripts/src/format_json.sh"
 
 #### acore-solid
 
-**Repository**: https://github.com/ahmet-cetinkaya/acore-solid
+**Repository**: <https://github.com/ahmet-cetinkaya/acore-solid>
 **Purpose**: SolidJS utilities and components (not actively used in landing page).
 
-```
+```text
 acore-solid/
 ├── providers/                       # SolidJS context providers
 ├── ui/                              # SolidJS UI components
@@ -281,13 +285,14 @@ acore-solid/
 └── tsconfig.json                    # TypeScript configuration
 ```
 
-**Status**: Included for future projects using SolidJS, not used in current landing page.
+**Status**: Included for future projects using SolidJS, not used in current
+landing page.
 
 ### Source Directory (`/src/presentation/Tamirly.LandingWebUI`)
 
 **Purpose**: Main Astro application for the landing page.
 
-```
+```text
 Tamirly.LandingWebUI/
 ├── .vscode/
 │   ├── extensions.json              # Recommended VS Code extensions
@@ -330,6 +335,7 @@ Tamirly.LandingWebUI/
    ```
 
 3. **tsconfig.json**
+
    ```json
    {
      "extends": "astro/tsconfigs/strict",
@@ -411,7 +417,7 @@ const { title, description = "" } = Astro.props;
 
 ### Component Hierarchy
 
-```
+```text
 Layout (Future)
 ├── Navigation
 │   ├── Logo
@@ -435,10 +441,13 @@ Layout (Future)
 │   ├── Subheadline
 │   └── Download Button
 └── Footer
-    ├── Brand Column
-    ├── Product Column
-    ├── Support Column
-    └── Legal Column
+    - **Modularized Development**: Features are broken into discrete components.
+    - **Performance First**: Minimal JavaScript on the client side using Astro.
+    - **Shared Utilities**: Common logic is shared across packages.
+    - **Type Safety**: TypeScript is used throughout the stack.
+    - **Component-Driven**: UI is built using reusable components.
+    - **Consistent Styling**: Unified system for styling across components.
+    - **Documented**: Comprehensive documentation for architecture and features.
 ```
 
 ### State Management
@@ -458,7 +467,7 @@ Layout (Future)
 
 ### Dependency Graph
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │               Tamirly.LandingWebUI (Astro App)              │
 │                                                              │
@@ -513,11 +522,9 @@ Layout (Future)
 
 #### Git Submodules
 
-| Submodule       | Repository                                                                                   | Purpose                        |
-| --------------- | -------------------------------------------------------------------------------------------- | ------------------------------ |
-| `acore-astro`   | [github.com/ahmet-cetinkaya/acore-astro](https://github.com/ahmet-cetinkaya/acore-astro)     | Shared Astro components        |
-| `acore-scripts` | [github.com/ahmet-cetinkaya/acore-scripts](https://github.com/ahmet-cetinkaya/acore-scripts) | Formatting utilities           |
-| `acore-solid`   | [github.com/ahmet-cetinkaya/acore-solid](https://github.com/ahmet-cetinkaya/acore-solid)     | SolidJS utilities (future use) |
+| `acore-astro` | [astro](https://github.com/a-c/acore-astro) | Shared |
+| `acore-scripts` | [scripts](https://github.com/a-c/acore-scripts) | Utils |
+| `acore-solid` | [solid](https://github.com/a-c/acore-solid) | Future |
 
 ---
 
@@ -525,7 +532,7 @@ Layout (Future)
 
 ### Build Process
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │ 1. Source Files                                            │
 │    ├── src/pages/index.astro                               │
@@ -554,7 +561,7 @@ Layout (Future)
 
 ### Runtime Execution
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │ 1. User Requests Page                                      │
 │    └── GET https://tamirly.example.com/                    │
@@ -687,6 +694,7 @@ export default {
    ```
 
 5. **Update parent repository**:
+
    ```bash
    cd ../..
    git add packages/acore-astro
@@ -755,6 +763,7 @@ export default {
    ```
 
 4. **Call in format.sh**:
+
    ```bash
    format_newtype "$PROJECT_ROOT"
    ```
@@ -784,4 +793,4 @@ export default {
 
 ---
 
-**End of Document**
+## End of Document

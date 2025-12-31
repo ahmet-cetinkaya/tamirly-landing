@@ -12,19 +12,6 @@ PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 # Source acore-scripts format utilities
 ACORE_SCRIPTS_DIR="$PROJECT_ROOT/packages/acore-scripts/src"
 
-# Configuration: Files to exclude from formatting
-EXCLUDE_PATTERNS=(
-  "node_modules/"
-  ".git/"
-  "dist/"
-  "dist-ssr/"
-  ".astro/"
-  "*.min.js"
-  "*.min.mjs"
-  "*.min.css"
-  "packages/"
-)
-
 # Check if acore-scripts exists
 if [[ ! -d "$ACORE_SCRIPTS_DIR" ]]; then
   echo "❌ Error: acore-scripts not found at $ACORE_SCRIPTS_DIR"
@@ -34,17 +21,19 @@ if [[ ! -d "$ACORE_SCRIPTS_DIR" ]]; then
 fi
 
 # Source logger
+# shellcheck source=/dev/null
 source "$ACORE_SCRIPTS_DIR/logger.sh"
 
 # Track overall success
 OVERALL_SUCCESS=0
 
-echo "🎨 Formatting Project Files"
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+acore_log_header "🎨 Formatting Project Files"
+acore_log_info "Running formatters for different file types..."
 
 # Format Shell Scripts
 if [[ -f "$ACORE_SCRIPTS_DIR/format_sh.sh" ]]; then
-  echo ""
+  acore_log_section "🐚 Formatting Shell Scripts"
+  # shellcheck source=/dev/null
   source "$ACORE_SCRIPTS_DIR/format_sh.sh"
   if ! acore_sh_format_all; then
     OVERALL_SUCCESS=1
@@ -53,7 +42,8 @@ fi
 
 # Format Markdown Files
 if [[ -f "$ACORE_SCRIPTS_DIR/format_md.sh" ]]; then
-  echo ""
+  acore_log_section "📝 Formatting Markdown Files"
+  # shellcheck source=/dev/null
   source "$ACORE_SCRIPTS_DIR/format_md.sh"
   if ! acore_format_md_files; then
     # Non-fatal, continue but track
@@ -63,7 +53,8 @@ fi
 
 # Format JSON Files
 if [[ -f "$ACORE_SCRIPTS_DIR/format_json.sh" ]]; then
-  echo ""
+  acore_log_section "📦 Formatting JSON Files"
+  # shellcheck source=/dev/null
   source "$ACORE_SCRIPTS_DIR/format_json.sh"
   if ! acore_format_json_files; then
     # Non-fatal, continue but track
@@ -73,7 +64,8 @@ fi
 
 # Format YAML Files
 if [[ -f "$ACORE_SCRIPTS_DIR/format_yaml.sh" ]]; then
-  echo ""
+  acore_log_section "⚙️  Formatting YAML Files"
+  # shellcheck source=/dev/null
   source "$ACORE_SCRIPTS_DIR/format_yaml.sh"
   if ! acore_format_yaml_files; then
     # Non-fatal, continue but track
@@ -82,12 +74,8 @@ if [[ -f "$ACORE_SCRIPTS_DIR/format_yaml.sh" ]]; then
 fi
 
 # Format Astro and TypeScript Files with Prettier
-echo ""
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 if command -v prettier > /dev/null 2>&1; then
-  echo ""
-  echo "🚀 Formatting Astro & TypeScript Files"
-  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  acore_log_section "🚀 Formatting Astro & TypeScript Files"
 
   # Check if .prettierignore exists, if not create a basic one
   if [[ ! -f "$PROJECT_ROOT/.prettierignore" ]]; then
@@ -122,52 +110,41 @@ EOF
   fi
 
   # Format Astro files
-  echo "📨 Formatting Astro files..."
+  acore_log_info "Formatting Astro files..."
   if prettier --write "**/*.astro" \
     --ignore-path=.gitignore \
     --ignore-path=.prettierignore \
     --log-level warn 2>&1 | grep -v "No matching files"; then
-    echo "✅ Astro files formatted"
+    acore_log_success "Astro files formatted"
   fi
 
   # Format TypeScript/JavaScript files
-  echo "💎 Formatting TypeScript/JavaScript files..."
+  acore_log_info "Formatting TypeScript/JavaScript files..."
   if prettier --write "**/*.{ts,tsx,js,jsx,mjs,cjs}" \
     --ignore-path=.gitignore \
     --ignore-path=.prettierignore \
     --log-level warn 2>&1 | grep -v "No matching files"; then
-    echo "✅ TypeScript/JavaScript files formatted"
+    acore_log_success "TypeScript/JavaScript files formatted"
   fi
 
-  echo "✅ Code formatting completed successfully!"
+  acore_log_success "Code formatting completed successfully!"
 else
-  echo ""
-  echo "⚠️  Prettier is not installed or not in PATH"
-  echo "Cannot format Astro/TypeScript files without Prettier"
-  echo ""
-  echo "To install Prettier:"
-  echo "  npm:    npm install -g prettier"
-  echo "  yarn:   yarn global add prettier"
-  echo "  pnpm:   pnpm add -g prettier"
-  echo "  bun:    bun install -g prettier"
-  echo ""
-  echo "For Astro support, also install:"
-  echo "  npm install -g prettier-plugin-astro"
-  echo ""
+  acore_log_warning "Prettier is not installed or not in PATH"
+  acore_log_info "Cannot format Astro/TypeScript files without Prettier"
+  acore_log_info "To install Prettier: bun install -g prettier"
   # Non-fatal, continue but track
   [[ $OVERALL_SUCCESS -eq 0 ]] && OVERALL_SUCCESS=2
 fi
 
-echo ""
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+acore_log_divider
 
 if [[ $OVERALL_SUCCESS -eq 0 ]]; then
-  echo "✅ All formatting completed successfully!"
+  acore_log_success "All formatting completed successfully!"
   exit 0
 elif [[ $OVERALL_SUCCESS -eq 1 ]]; then
-  echo "⚠️  Formatting completed with errors (shell scripts)"
+  acore_log_error "Formatting completed with errors (shell scripts)"
   exit 1
 else
-  echo "⚠️  Formatting completed with some warnings (optional formatters missing)"
+  acore_log_warning "Formatting completed with some warnings"
   exit 0
 fi

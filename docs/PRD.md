@@ -5,11 +5,16 @@
 **Product Name:** Tamirly Landing Page
 **Version:** 1.0
 **Date:** December 2025
+**Purpose**: Comprehensive specification for the Tamirly landing page, including
+business objectives, audience, technical specs, and development phases.
 **Status:** Draft
 
 ## Product Vision
 
-The Tamirly landing page serves as the primary web presence and conversion engine for the Tamirly mobile application. It effectively communicates the app's value proposition to technicians and DIYers, driving downloads from both Google Play Store and F-Droid.
+The Tamirly landing page serves as the primary web presence and conversion engine
+for the Tamirly mobile application. It effectively communicates the app's value
+proposition to technicians and DIYers, driving downloads from both
+Google Play Store.
 
 ## Business Objectives
 
@@ -17,8 +22,8 @@ The Tamirly landing page serves as the primary web presence and conversion engin
 
 - **Conversion Rate**: Achieve 15% download conversion from visitor to app install
 - **Traffic**: Generate 5,000+ monthly visitors through organic and paid channels
-- **Brand Awareness**: Establish Tamirly as the go-to offline appliance repair tool
-- **Dual Distribution**: Balance traffic between Google Play Store and F-Droid downloads
+- **Brand Awareness**: Establish Tamirly as the go-to offline repair tool
+- **Distribution**: Drive high-quality traffic to Google Play Store
 
 ### Success Metrics
 
@@ -32,7 +37,7 @@ The Tamirly landing page serves as the primary web presence and conversion engin
 
 ### Primary Users (75%)
 
-**HVAC Technicians & Professional Repair Specialists**
+#### HVAC Technicians & Professional Specialists
 
 - Age: 25-55
 - Technical background with appliance repair experience
@@ -42,7 +47,7 @@ The Tamirly landing page serves as the primary web presence and conversion engin
 
 ### Secondary Users (25%)
 
-**DIY Home Users**
+#### DIY Home Users
 
 - Age: 30-60
 - Basic technical knowledge, prefer self-repair
@@ -85,10 +90,10 @@ The Tamirly landing page serves as the primary web presence and conversion engin
 
 **Key Messaging**:
 
-```
+```text
 Primary: "Offline Reliability. Instant Solutions."
 Secondary: "Diagnose appliance errors in seconds without an internet connection.
-           The ultimate tool for technicians and DIYers to fix HVAC, refrigerators, and more."
+           The ultimate tool for technicians and DIYers."
 ```
 
 **Visual Components**:
@@ -123,7 +128,7 @@ Secondary: "Diagnose appliance errors in seconds without an internet connection.
 
 **Section Header**:
 
-```
+```text
 Title: "Everything a Technician Needs"
 Subtitle: "Tamirly is built to work in the field. No signal? No problem.
           Get accurate diagnostics instantly."
@@ -176,26 +181,26 @@ Subtitle: "Tamirly is built to work in the field. No signal? No problem.
 
 **Section Header**:
 
-```
+```text
 Title: "Simple Workflow"
 Subtitle: "Three steps to solve any appliance issue."
 ```
 
 **Three-Step Process** (Horizontal with phone mockups):
 
-**Step 01: Select Appliance**
+#### Step 01: Select Appliance
 
-- Description: "Choose the appliance type (AC, Fridge, Boiler) and the specific brand."
-- Phone Mockup: Shows brand selection screen (Daikin, Mitsubishi, LG, Samsung)
+- Description: "Choose the appliance and specific brand."
+- Phone Mockup: Shows brand-selection screen (Daikin, Mitsubishi, LG, Samsung)
 - Visual: Scrollable brand list with colored badges
 
-**Step 02: Enter Code**
+#### Step 02: Enter Code
 
 - Description: "Type the error code displayed on the screen or select the LED pattern."
 - Phone Mockup: Shows code input keypad with cursor animation
 - Visual: Numeric keypad with "E2\_" input in progress
 
-**Step 03: Fix It**
+#### Step 03: Fix It
 
 - Description: "Follow the recommended actions to repair the fault immediately."
 - Phone Mockup: Shows error details with recommended actions checklist
@@ -216,7 +221,7 @@ Subtitle: "Three steps to solve any appliance issue."
 
 **Section Header**:
 
-```
+```text
 Text: "Trusted Database for Major Brands"
 Style: Uppercase, letter-spaced, muted color
 ```
@@ -247,7 +252,7 @@ Brands displayed (grayscale, hover to color):
 
 **Section Content**:
 
-```
+```text
 Headline: "Ready to simplify your repairs?"
 Body: "Download Tamirly today and carry a complete library of appliance
        repair manuals in your pocket."
@@ -269,26 +274,26 @@ CTA: "Download for Android" button
 
 **Footer Columns** (4 columns):
 
-**Column 1: Brand**
+#### Column 1: Brand
 
 - Tamirly logo and name
 - Tagline: "The ultimate offline companion for appliance technicians.
   Diagnose smarter, fix faster."
 
-**Column 2: Product**
+#### Column 2: Product
 
 - Features
 - Supported Brands
 - Pricing
 - Download
 
-**Column 3: Support**
+#### Column 3: Support
 
 - Help Center
 - Contact Us
 - Suggest a Brand
 
-**Column 4: Legal**
+#### Column 4: Legal
 
 - Privacy Policy
 - Terms of Service
@@ -334,10 +339,10 @@ CTA: "Download for Android" button
 
 **On-Page SEO**:
 
-```
-Title Tag: "Tamirly - Offline Appliance Error Code Database for HVAC Technicians"
-Meta Description: "Diagnose appliance errors offline. 50+ brands, 1000+ error codes.
-                   The ultimate tool for HVAC technicians and DIYers. Download free for Android."
+```text
+Title Tag: "Tamirly - Offline Appliance Error Code Database"
+Meta Description: "Diagnose appliance errors offline. 50+ brands, 1000+ codes.
+                   The tool for HVAC technicians and DIYers. Download free."
 Canonical URL: https://tamirly.app/
 ```
 
@@ -458,8 +463,7 @@ Canonical URL: https://tamirly.app/
 
 **Download Destinations**:
 
-- Google Play Store: Primary link (70-80% of users)
-- F-Droid: Secondary link (20-30% of users)
+- Google Play Store: Primary link
 - Direct APK: Optional for advanced users
 
 ### Trust Signals
@@ -503,7 +507,7 @@ Canonical URL: https://tamirly.app/
 - ✅ Complete responsive HTML implementation
 - ✅ Tailwind CSS styling with custom config
 - ✅ All content sections from mockup
-- ✅ Google Play Store and F-Droid download links
+- ✅ Google Play Store download links
 - ✅ Basic SEO meta tags
 - ✅ Accessibility compliance (WCAG 2.1 AA)
 
@@ -630,7 +634,6 @@ Canonical URL: https://tamirly.app/
 **Risk**: App store approval delays
 **Mitigation**:
 
-- F-Droid as alternative distribution
 - Direct APK download option
 - Clear communication of timeline
 
@@ -642,7 +645,7 @@ Canonical URL: https://tamirly.app/
 
 - Final app screenshots from development team
 - App store listing text and assets
-- Download link URLs (Play Store, F-Droid)
+- Download link URLs (Play Store)
 - Brand approval for logo usage
 
 ### External Dependencies
@@ -693,7 +696,7 @@ Canonical URL: https://tamirly.app/
 **Tamirly Differentiation**:
 
 - Offline-first messaging (unique positioning)
-- Dual distribution (Play Store + F-Droid)
+- Google Play distribution focus
 - Clean, modern dark theme
 - Interactive product showcase
 

@@ -1,0 +1,18 @@
+---
+interface Props {
+  svg: string;
+  alt: string;
+  class?: string;
+}
+
+const { svg, alt, class: className } = Astro.props;
+
+// Modify SVG to inherit color
+const processedSvg = svg.replace(/<svg/i, '<svg fill="currentColor"');
+---
+
+<div
+  class={`text-text-main fill-current flex items-center [&>svg]:h-full [&>svg]:w-auto ${className || ""}`}
+  set:html={processedSvg}
+  aria-label={alt}
+/>

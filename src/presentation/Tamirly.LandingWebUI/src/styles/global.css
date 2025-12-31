@@ -1,21 +1,87 @@
 @import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
 
-/* Custom theme variables */
+:root {
+  /* Light Mode Defaults */
+  --background: #ffffff;
+  --surface: #f4f4f5;
+  /* zinc-100 */
+  --text-main: #18181b;
+  /* zinc-900 */
+  --text-muted: #52525b;
+  /* zinc-600 */
+  --border: #e4e4e7;
+  /* zinc-200 */
+
+  --primary: #1193d4;
+  --primary-hover: #0d7ab1;
+  --secondary: #0ea5e9;
+}
+
+.dark {
+  /* Dark Mode Overrides */
+  --background: #101c22;
+  --surface: #1a2831;
+  --text-main: #f4f4f5;
+  /* zinc-100 */
+  --text-muted: #a1a1aa;
+  /* zinc-400 */
+  --border: #3f3f46;
+  /* zinc-700 */
+}
+
 @theme {
   /* Brand colors */
-  --color-brand-50: #f0f9ff;
-  --color-brand-100: #e0f2fe;
-  --color-brand-200: #bae6fd;
-  --color-brand-300: #7dd3fc;
-  --color-brand-400: #38bdf8;
-  --color-brand-500: #0ea5e9;
-  --color-brand-600: #0284c7;
-  --color-brand-700: #0369a1;
-  --color-brand-800: #075985;
-  --color-brand-900: #0c4a6e;
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+
+  /* Background colors */
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+
+  /* Legacy mapping for migration smooth transition */
+  --color-background-dark: var(--background);
+  --color-surface-dark: var(--surface);
+
+  /* Text colors */
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+
+  /* Border colors */
+  --color-border-color: var(--border);
 
   /* Typography */
-  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-display: "Manrope", "Inter", sans-serif;
+  --font-sans: "Manrope", "Inter", sans-serif;
+
+  /* Animation */
+  --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-fade-in: fade-in 0.2s ease-out;
+
+  @keyframes pulse {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: .5;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 html {
@@ -23,7 +89,49 @@ html {
 }
 
 body {
-  @apply antialiased;
+  @apply antialiased bg-background text-text-main font-sans;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Glass Effect */
+.glass-effect {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hero Gradient */
+.hero-gradient {
+  background: radial-gradient(circle at top right,
+      rgba(14, 165, 233, 0.15),
+      transparent 40%),
+    radial-gradient(circle at bottom left,
+      rgba(14, 165, 233, 0.1),
+      transparent 40%);
+}
+
+@layer utilities {
+  .bg-circuit-pattern {
+    background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%2394a3b8\' fill-opacity=\'0.07\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+  }
 }
