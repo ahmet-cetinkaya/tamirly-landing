@@ -25,16 +25,32 @@ const {
 <html lang={locale}>
   <head>
     <script is:inline>
-      (function () {
+      function applyTheme() {
         const theme = localStorage.getItem("theme");
         const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
         if (theme === "dark" || (!theme && systemDark)) {
+          console.log("Applying dark (initial)");
           document.documentElement.classList.add("dark");
         } else {
           document.documentElement.classList.remove("dark");
         }
-      })();
+      }
+
+      function handleSwap(event) {
+        const theme = localStorage.getItem("theme");
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        if (theme === "dark" || (!theme && systemDark)) {
+          console.log("Applying dark (swap)");
+          event.newDocument.documentElement.classList.add("dark");
+        } else {
+          event.newDocument.documentElement.classList.remove("dark");
+        }
+      }
+
+      applyTheme();
+      document.addEventListener("astro:before-swap", handleSwap);
     </script>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -49,7 +65,7 @@ const {
       rel="stylesheet"
     />
     <Analytics />
-    <Metadata title={title} description={description} site="https://tamirly.app" />
+    <Metadata title={title} description={description} site="https://tamirly.ahmetcetinkaya.me" />
   </head>
   <body
     class="bg-background-dark font-sans text-text-main transition-colors duration-300 antialiased selection:bg-primary selection:text-white"
