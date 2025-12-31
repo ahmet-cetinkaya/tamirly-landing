@@ -37,9 +37,9 @@ export const translations: Translations = {
   },
   [TranslationKeys.HERO_DESCRIPTION]: {
     [Locales.EN]:
-      "Tamirly is an offline-capable mobile application that serves as a comprehensive database for electronic appliance error codes, their meanings, and recommended solution steps.",
+      "{appName} is an offline-capable mobile application that serves as a comprehensive database for electronic appliance error codes, their meanings, and recommended solution steps.",
     [Locales.TR]:
-      "Tamirly, elektronik ev aletleri hata kodları, anlamları ve önerilen çözüm adımları için kapsamlı bir veritabanı sunan çevrimdışı çalışabilen bir mobil uygulamadır.",
+      "{appName}, elektronik ev aletleri hata kodları, anlamları ve önerilen çözüm adımları için kapsamlı bir veritabanı sunan çevrimdışı çalışabilen bir mobil uygulamadır.",
   },
   [TranslationKeys.HERO_BTN_ANDROID]: {
     [Locales.EN]: "Get for Android",
@@ -68,8 +68,8 @@ export const translations: Translations = {
     [Locales.TR]: "Bir Teknisyenin İhtiyacı Olan Her Şey",
   },
   [TranslationKeys.FEATURES_DESCRIPTION]: {
-    [Locales.EN]: "Tamirly is built to work in the field. No signal? No problem. Get accurate diagnostics instantly.",
-    [Locales.TR]: "Tamirly sahada çalışmak üzere tasarlandı. Sinyal yok mu? Sorun değil. Anında doğru teşhisler alın.",
+    [Locales.EN]: "{appName} is built to work in the field. No signal? No problem. Get accurate diagnostics instantly.",
+    [Locales.TR]: "{appName} sahada çalışmak üzere tasarlandı. Sinyal yok mu? Sorun değil. Anında doğru teşhisler alın.",
   },
   [TranslationKeys.FEATURES_OFFLINE_TITLE]: {
     [Locales.EN]: "100% Offline Database",
@@ -177,8 +177,8 @@ export const translations: Translations = {
     [Locales.TR]: "Tamir işlerinizi kolaylaştırmaya hazır mısınız?",
   },
   [TranslationKeys.CTA_DESCRIPTION]: {
-    [Locales.EN]: "Download Tamirly today and carry a complete library of appliance repair manuals in your pocket.",
-    [Locales.TR]: "Tamirly uygulamasını bugün indirin ve tam bir cihaz tamir kılavuzu kütüphanesini cebinizde taşıyın.",
+    [Locales.EN]: "Download {appName} today and carry a complete library of appliance repair manuals in your pocket.",
+    [Locales.TR]: "{appName} uygulamasını bugün indirin ve tam bir cihaz tamir kılavuzu kütüphanesini cebinizde taşıyın.",
   },
   [TranslationKeys.CTA_BUTTON]: {
     [Locales.EN]: "Download for Android",

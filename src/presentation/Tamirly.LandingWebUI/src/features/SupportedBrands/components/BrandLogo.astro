@@ -8,7 +8,7 @@ interface Props {
 const { svg, alt, class: className } = Astro.props;
 
 // Modify SVG to inherit color
-const processedSvg = svg.replace(/^<svg/, '<svg fill="currentColor"');
+const processedSvg = svg.replace(/<svg/i, '<svg fill="currentColor"');
 ---
 
 <div

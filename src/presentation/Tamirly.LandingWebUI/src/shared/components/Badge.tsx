@@ -50,7 +50,7 @@ const Badge: Component<BadgeProps> = (props) => {
   };
 
   const getClasses = () => {
-    // @ts-ignore - indexing with string on specific keys
+
     return `${styles.base} ${styles.variants[merged.variant as keyof typeof styles.variants][merged.color as keyof typeof styles.pulse]}`;
   };
 

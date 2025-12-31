@@ -16,7 +16,9 @@ async function takeScreenshot() {
 
   // Ensure we kill the dev server on exit
   process.on("exit", () => {
-    process.kill(-devServer.pid!);
+    if (devServer.pid) {
+      process.kill(-devServer.pid);
+    }
   });
 
   // 2. Wait for server to be ready
