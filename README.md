@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD033 MD041 -->
 <img src="docs/assets/tamirly-app-icon.png" alt="Tamirly App Icon" width="128" height="128">
 
 # `Tamirly Landing` ![GitHub](https://img.shields.io/github/license/ahmetcetinkaya/tamirly-landing) ![GPL v3](https://img.shields.io/badge/license-GPLv3-blue) [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?&logo=buy-me-a-coffee&logoColor=black)](https://ahmetcetinkaya.me/donate)
