@@ -32,7 +32,7 @@ versioning and shared usage across multiple projects.
 
 ### Key Architectural Principles
 
-| Principal       | Implementation                                         |
+| Principle       | Implementation                                         |
 | --------------- | ------------------------------------------------------ |
 | **Separation**  | Core (`packages/`) isolated from presentation (`src/`) |
 | **Reusability** | Shared components via Git submodules                   |
@@ -113,8 +113,7 @@ tamirly-landing/
 │   ├── package.json            # Root package config
 │   ├── prettier.config.mjs     # Prettier settings
 │   ├── README.md               # Public project README
-│   ├── LICENSE                 # GPL v3 license
-│   └── CLAUDE.md               # AI assistant guidance (gitignored)
+│   └── LICENSE                 # GPL v3 license
 │
 ├── 📁 Documentation (docs/)
 │   ├── ProjectStructure.md     # This file - architecture docs
@@ -166,17 +165,16 @@ tamirly-landing/
 
 **Purpose**: Repository-level configuration and documentation.
 
-| File/Dir   | Type | Purpose                            |
-| ---------- | ---- | ---------------------------------- |
-| `.gitign`  | Conf | Git exclusions (IDE, build, etc.)  |
-| `.gitmod`  | Conf | Git submodule mappings             |
-| `.pretign` | Conf | Prettier exclusions                |
-| `bun.lock` | Lock | Bun lockfile                       |
-| `pkg.json` | Conf | Root scripts, dev dependencies     |
-| `pret.mjs` | Conf | Formatting rules with Astro plugin |
-| `READ.md`  | Docs | Public project documentation       |
-| `LICENSE`  | LegL | GNU GPL v3.0                       |
-| `CLAUDE`   | Docs | AI assistant guidance              |
+| File/Dir              | Type  | Purpose                            |
+| --------------------- | ----- | ---------------------------------- |
+| `.gitignore`          | Conf  | Git exclusions (IDE, build, etc.)  |
+| `.gitmodules`         | Conf  | Git submodule mappings             |
+| `.prettierignore`     | Conf  | Prettier exclusions                |
+| `bun.lock`            | Lock  | Bun lockfile                       |
+| `package.json`        | Conf  | Root scripts, dev dependencies     |
+| `prettier.config.mjs` | Conf  | Formatting rules with Astro plugin |
+| `README.md`           | Docs  | Public project documentation       |
+| `LICENSE`             | Legal | GNU GPL v3.0                       |
 
 **Key Scripts** (from `package.json`):
 
