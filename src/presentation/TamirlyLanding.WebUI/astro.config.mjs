@@ -5,6 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 import { fileURLToPath } from "url";
 import path from "path";
+import { SITE_URL } from "./src/shared/constants";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -12,7 +13,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://tamirly.ahmetcetinkaya.me",
+  site: SITE_URL,
   compressHTML: true,
   integrations: [solidJs(), sitemap()],
   vite: {

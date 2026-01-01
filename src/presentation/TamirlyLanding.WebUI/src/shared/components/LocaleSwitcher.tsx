@@ -1,6 +1,8 @@
 import { type Component } from "solid-js";
 import { useAppI18n, AppI18nProvider } from "../i18n/AppI18nProvider";
 import { Locales } from "../i18n/enums/Locales";
+import { i18nInstance } from "../i18n/instance";
+import { SITE_URL } from "../constants";
 
 const LocaleSwitcherContent: Component<{ currentPath: string }> = (props) => {
   const { locale, setLocale } = useAppI18n();
@@ -8,15 +10,14 @@ const LocaleSwitcherContent: Component<{ currentPath: string }> = (props) => {
   const getTargetHref = () => {
     const current = locale();
     const next = current === Locales.EN ? Locales.TR : Locales.EN;
-    // Use prop primarily for SSR safety, fallback to window only if prop is missing (client-side edge case)
-    const pathname = props.currentPath || (typeof window !== "undefined" ? window.location.pathname : "/");
 
-    if (next === Locales.TR && !pathname.startsWith("/tr")) {
-      return `/tr${pathname === "/" ? "" : pathname}`;
-    } else if (next === Locales.EN && pathname.startsWith("/tr")) {
-      return pathname.replace(/^\/tr/, "") || "/";
-    }
-    return "#";
+    // Use I18n.getLocaleUrl() for proper URL transformation
+    const baseUrl = typeof window !== "undefined" ? window.location.origin : SITE_URL;
+    const href = typeof window !== "undefined" ? window.location.href : `${SITE_URL}${props.currentPath}`;
+    const url = new URL(href, baseUrl);
+    const targetUrl = i18nInstance.getLocaleUrl(url, next, Locales.EN);
+
+    return targetUrl.pathname + targetUrl.search;
   };
 
   const handleClick = () => {
