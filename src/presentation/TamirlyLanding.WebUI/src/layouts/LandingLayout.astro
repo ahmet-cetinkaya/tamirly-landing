@@ -1,5 +1,5 @@
 ---
-import Metadata, { type StructuredData } from "@packages/acore-astro/src/components/Metadata.astro";
+import Metadata, { type StructuredData, type OGImage } from "@packages/acore-astro/src/components/Metadata.astro";
 import { ClientRouter } from "astro:transitions";
 import Navbar from "../features/Navigation/components/Navbar.astro";
 import Footer from "../features/Footer/components/Footer.astro";
@@ -8,12 +8,14 @@ import "../styles/global.css";
 import type { Locales } from "../shared/i18n/enums/Locales";
 import { Locales as LocalesEnum } from "../shared/i18n/enums/Locales";
 import Analytics from "../shared/components/Analytics.astro";
+import defaultOgImage from "../shared/assets/images/favicon-og.svg";
 
 interface Props {
   title?: string;
   description?: string;
   locale?: Locales;
   structuredData?: StructuredData;
+  ogImage?: OGImage;
 }
 
 const {
@@ -21,7 +23,13 @@ const {
   description = "Find appliance error codes & solutions. Offline repair guide.",
   locale = LocalesEnum.EN,
   structuredData,
+  ogImage,
 } = Astro.props;
+
+const finalOgImage: OGImage = ogImage || {
+  image: defaultOgImage,
+  alt: title,
+};
 ---
 
 <html lang={locale}>
@@ -72,6 +80,7 @@ const {
       description={description}
       site="https://tamirly.ahmetcetinkaya.me"
       structuredData={structuredData}
+      ogImage={finalOgImage}
     />
   </head>
   <body
