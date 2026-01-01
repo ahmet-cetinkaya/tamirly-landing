@@ -24,6 +24,8 @@
 
   --primary: #1193d4;
   --primary-hover: #0d7ab1;
+  --primary-content: #0B6E99;
+  --primary-content-hover: #085a80;
   --secondary: #0ea5e9;
 }
 
@@ -50,6 +52,8 @@ h1 {
   /* Brand colors */
   --color-primary: var(--primary);
   --color-primary-hover: var(--primary-hover);
+  --color-primary-content: var(--primary-content);
+  --color-primary-content-hover: var(--primary-content-hover);
   --color-secondary: var(--secondary);
 
   /* Background colors */

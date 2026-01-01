@@ -25,7 +25,7 @@ const Button: Component<ButtonProps> = (props) => {
     // Variant
     switch (local.variant) {
       case "primary":
-        classes += " bg-primary hover:bg-primary-hover text-white shadow-lg shadow-primary/30";
+        classes += " bg-primary-content hover:bg-primary-content-hover text-white shadow-lg shadow-primary/30";
         break;
       case "secondary":
         classes += " bg-surface border border-border-color hover:border-primary text-text-main";
@@ -37,7 +37,7 @@ const Button: Component<ButtonProps> = (props) => {
         classes += " hover:bg-surface text-text-muted hover:text-primary";
         break;
       case "white":
-        classes += " bg-white text-primary hover:bg-gray-100 shadow-lg";
+        classes += " bg-white text-primary-content hover:bg-gray-100 shadow-lg";
         break;
     }
 
