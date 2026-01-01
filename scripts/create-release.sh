@@ -16,7 +16,7 @@ set -e
 # Get script directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-PACKAGE_JSON="$PROJECT_ROOT/src/presentation/Tamirly.LandingWebUI/package.json"
+PACKAGE_JSON="$PROJECT_ROOT/src/presentation/TamirlyLanding.WebUI/package.json"
 ROOT_PACKAGE_JSON="$PROJECT_ROOT/package.json"
 CHANGELOG_FILE="$PROJECT_ROOT/CHANGELOG.md"
 
