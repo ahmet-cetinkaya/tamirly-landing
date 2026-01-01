@@ -26,8 +26,10 @@ const isTr = locale === LocalesEnum.TR;
 const screenshotDarkSrc = isTr ? screenshotTrDark : screenshotEnDark;
 const screenshotLightSrc = isTr ? screenshotTrLight : screenshotEnLight;
 
-const optimizedDark = await getImage({ src: screenshotDarkSrc, format: "webp", width: 384 });
-const optimizedLight = await getImage({ src: screenshotLightSrc, format: "webp", width: 384 });
+// Optimize images to actual display size (~265px width) to reduce file size
+// Lighthouse showed images at 265x574 displayed vs 384x832 actual
+const optimizedDark = await getImage({ src: screenshotDarkSrc, format: "webp", width: 265 });
+const optimizedLight = await getImage({ src: screenshotLightSrc, format: "webp", width: 265 });
 
 const screenshotDark = optimizedDark.src;
 const screenshotLight = optimizedLight.src;

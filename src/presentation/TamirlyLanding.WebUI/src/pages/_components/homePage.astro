@@ -39,9 +39,11 @@ const structuredData = {
 ---
 
 <LandingLayout locale={currentLocale} structuredData={structuredData} title={t(TranslationKeys.PAGE_TITLE)}>
-  <HeroSection locale={currentLocale} />
-  <FeaturesSection locale={currentLocale} />
-  <WorkflowSection locale={currentLocale} />
-  <BrandsSection locale={currentLocale} />
-  <CTASection locale={currentLocale} />
+  <main transition:animate="slide">
+    <HeroSection locale={currentLocale} />
+    <FeaturesSection locale={currentLocale} />
+    <WorkflowSection locale={currentLocale} />
+    <BrandsSection locale={currentLocale} />
+    <CTASection locale={currentLocale} />
+  </main>
 </LandingLayout>

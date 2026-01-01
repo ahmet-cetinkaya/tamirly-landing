@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.1] - 2026-01-01
 
 ### Fixed
+
 - Update create-release.sh for renamed directory
 - Update primary button text color to slate-900
 - Trigger on main branch instead of tags

@@ -2,6 +2,7 @@
 @variant dark (&:where(.dark, .dark *));
 
 /* Import Manrope font with swap to prevent render blocking */
+/* Using @import with fontsource automatically includes font-display: swap */
 @import "@fontsource/manrope/300.css";
 @import "@fontsource/manrope/400.css";
 @import "@fontsource/manrope/500.css";
@@ -37,6 +38,12 @@
   --border: #3f3f46;
   /* zinc-700 -> keep or darken slightly if needed for border contrast against background */
   /* zinc-700 */
+}
+
+/* Optimize Largest Contentful Paint (LCP) elements */
+h1 {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 700px;
 }
 
 @theme {
