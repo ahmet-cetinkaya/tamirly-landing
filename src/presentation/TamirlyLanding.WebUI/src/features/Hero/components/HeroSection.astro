@@ -28,8 +28,8 @@ const screenshotLightSrc = isTr ? screenshotTrLight : screenshotEnLight;
 
 // Optimize images to actual display size (~265px width) to reduce file size
 // Lighthouse showed images at 265x574 displayed vs 384x832 actual
-const optimizedDark = await getImage({ src: screenshotDarkSrc, format: "webp", width: 265 });
-const optimizedLight = await getImage({ src: screenshotLightSrc, format: "webp", width: 265 });
+const optimizedDark = await getImage({ src: screenshotDarkSrc, format: "webp", width: 795 });
+const optimizedLight = await getImage({ src: screenshotLightSrc, format: "webp", width: 795 });
 
 const screenshotDark = optimizedDark.src;
 const screenshotLight = optimizedLight.src;

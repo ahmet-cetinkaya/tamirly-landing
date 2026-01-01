@@ -41,12 +41,12 @@ const step3ImgDarkSrc = isTr ? step3TrDark : step3EnDark;
 const step3ImgLightSrc = isTr ? step3TrLight : step3EnLight;
 
 const [step1ImgDark, step1ImgLight, step2ImgDark, step2ImgLight, step3ImgDark, step3ImgLight] = await Promise.all([
-  getImage({ src: step1ImgDarkSrc, format: "webp", width: 200 }),
-  getImage({ src: step1ImgLightSrc, format: "webp", width: 200 }),
-  getImage({ src: step2ImgDarkSrc, format: "webp", width: 200 }),
-  getImage({ src: step2ImgLightSrc, format: "webp", width: 200 }),
-  getImage({ src: step3ImgDarkSrc, format: "webp", width: 200 }),
-  getImage({ src: step3ImgLightSrc, format: "webp", width: 200 }),
+  getImage({ src: step1ImgDarkSrc, format: "webp", width: 600 }),
+  getImage({ src: step1ImgLightSrc, format: "webp", width: 600 }),
+  getImage({ src: step2ImgDarkSrc, format: "webp", width: 600 }),
+  getImage({ src: step2ImgLightSrc, format: "webp", width: 600 }),
+  getImage({ src: step3ImgDarkSrc, format: "webp", width: 600 }),
+  getImage({ src: step3ImgLightSrc, format: "webp", width: 600 }),
 ]).then((images) => images.map((img) => img.src));
 ---
 
