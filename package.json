@@ -14,7 +14,13 @@
     "url": "https://github.com/ahmetcetinkaya/tamirly-landing"
   },
   "type": "module",
+  "workspaces": [
+    "packages/acore-ts",
+    "packages/acore-solid",
+    "packages/acore-astro"
+  ],
   "scripts": {
+    "install:all": "./scripts/install-deps.sh",
     "format": "./scripts/format.sh",
     "format:check": "prettier --check \"**/*.{js,ts,tsx,jsx,mjs,cjs,astro,md,json,yaml,yml}\" --ignore-path=.gitignore --ignore-path=.prettierignore",
     "format:write": "prettier --write \"**/*.{js,ts,tsx,jsx,mjs,cjs,astro,md,json,yaml,yml}\" --ignore-path=.gitignore --ignore-path=.prettierignore",
