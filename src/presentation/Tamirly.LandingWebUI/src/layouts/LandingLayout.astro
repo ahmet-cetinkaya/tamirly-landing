@@ -1,5 +1,5 @@
 ---
-import Metadata from "../../../../../packages/acore-astro/src/components/Metadata.astro";
+import Metadata, { type StructuredData } from "acore-astro/src/components/Metadata.astro";
 import { ClientRouter } from "astro:transitions";
 import Navbar from "../features/Navigation/components/Navbar.astro";
 import Footer from "../features/Footer/components/Footer.astro";
@@ -13,7 +13,7 @@ interface Props {
   title?: string;
   description?: string;
   locale?: Locales;
-  structuredData?: Record<string, unknown>;
+  structuredData?: StructuredData;
 }
 
 const {
@@ -58,14 +58,6 @@ const {
     </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <ClientRouter />
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
     <Analytics />
     <Metadata
       title={title}

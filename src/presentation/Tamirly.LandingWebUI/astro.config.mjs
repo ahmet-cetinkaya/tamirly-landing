@@ -24,6 +24,7 @@ export default defineConfig({
         // Also map acore packages to source so Vite resolves them correctly
         "acore-solid": path.resolve(__dirname, "../../../packages/acore-solid"),
         "acore-ts": path.resolve(__dirname, "../../../packages/acore-ts"),
+        "acore-astro": path.resolve(__dirname, "../../../packages/acore-astro"),
       },
     },
   },
