@@ -94,7 +94,7 @@ project.
 2. **Development Workflow** (Lines 46-78)
    - Branch strategy: main, feature/_, fix/_, docs/\*
    - Git submodule management
-   - Development commands from `src/presentation/Tamirly.LandingWebUI/`
+   - Development commands from `src/presentation/TamirlyLanding.WebUI/`
 
 3. **Coding Standards** (Lines 79-138)
    - Astro/TypeScript conventions

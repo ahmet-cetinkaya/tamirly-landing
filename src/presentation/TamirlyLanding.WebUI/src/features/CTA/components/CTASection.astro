@@ -1,0 +1,50 @@
+---
+import AnimatedSection from "@packages/acore-astro/src/components/AnimatedSection.astro";
+import Button from "@tamirly-landing-webui/shared/components/Button";
+import { APP_DOWNLOAD_LINK } from "@tamirly-landing-webui/shared/constants";
+import { i18nInstance } from "@tamirly-landing-webui/shared/i18n/instance";
+import { TranslationKeys } from "@tamirly-landing-webui/shared/i18n/enums/TranslationKeys";
+import type { Locales } from "@tamirly-landing-webui/shared/i18n/enums/Locales";
+
+interface Props {
+  locale: Locales;
+}
+
+const { locale } = Astro.props;
+const t = (key: TranslationKeys) => i18nInstance.translate(locale, key);
+---
+
+<section class="py-20 bg-background">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <AnimatedSection animation="scale-up">
+      <div
+        class="bg-gradient-to-br from-primary to-blue-600 rounded-3xl p-10 md:p-16 text-center shadow-2xl relative overflow-hidden group"
+      >
+        <div class="absolute inset-0 bg-circuit-pattern opacity-10 pointer-events-none"></div>
+
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 relative z-10">
+          {t(TranslationKeys.CTA_TITLE)}
+        </h2>
+
+        <p
+          class="text-blue-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto relative z-10"
+          set:html={t(TranslationKeys.CTA_DESCRIPTION).replace(
+            "{appName}",
+            '<span class="text-white font-bold">Tamirly</span>',
+          )}
+        />
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
+          <Button
+            href={APP_DOWNLOAD_LINK}
+            variant="white"
+            class="text-base py-4 px-8 transition-transform hover:scale-105"
+            icon="android"
+          >
+            {t(TranslationKeys.CTA_BUTTON)}
+          </Button>
+        </div>
+      </div>
+    </AnimatedSection>
+  </div>
+</section>

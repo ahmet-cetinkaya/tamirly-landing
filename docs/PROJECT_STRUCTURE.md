@@ -73,7 +73,7 @@ packages.
 ```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Presentation Layer                       │
-│           (Tamirly.LandingWebUI - Astro Application)         │
+│           (TamirlyLanding.WebUI - Astro Application)         │
 │  ┌───────────────┐  ┌───────────────┐  ┌───────────────┐  │
 │  │   Pages       │  │  Components   │  │    Styles     │  │
 │  └───────────────┘  └───────────────┘  └───────────────┘  │
@@ -148,7 +148,7 @@ tamirly-landing/
 │
 └── 📁 Source (src/)
     └── presentation/
-        └── Tamirly.LandingWebUI/
+        └── TamirlyLanding.WebUI/
             ├── astro.config.mjs    # Astro configuration
             ├── package.json        # Landing page dependencies
             ├── tsconfig.json       # TypeScript configuration
@@ -183,9 +183,9 @@ tamirly-landing/
   "format": "./scripts/format.sh",
   "format:check": "prettier --check \"**/*.{js,ts,astro,md,json,yaml,yml}\"",
   "format:write": "prettier --write \"**/*.{js,ts,astro,md,json,yaml,yml}\"",
-  "landing:dev": "cd src/presentation/Tamirly.LandingWebUI && npm run dev",
-  "landing:build": "cd src/presentation/Tamirly.LandingWebUI && npm run build",
-  "landing:preview": "cd src/presentation/Tamirly.LandingWebUI && npm run preview"
+  "landing:dev": "cd src/presentation/TamirlyLanding.WebUI && npm run dev",
+  "landing:build": "cd src/presentation/TamirlyLanding.WebUI && npm run build",
+  "landing:preview": "cd src/presentation/TamirlyLanding.WebUI && npm run preview"
 }
 ```
 
@@ -288,12 +288,12 @@ acore-solid/
 **Status**: Included for future projects using SolidJS, not used in current
 landing page.
 
-### Source Directory (`/src/presentation/Tamirly.LandingWebUI`)
+### Source Directory (`/src/presentation/TamirlyLanding.WebUI`)
 
 **Purpose**: Main Astro application for the landing page.
 
 ```text
-Tamirly.LandingWebUI/
+TamirlyLanding.WebUI/
 ├── .vscode/
 │   ├── extensions.json              # Recommended VS Code extensions
 │   └── launch.json                  # Debug configurations
@@ -469,7 +469,7 @@ Layout (Future)
 
 ```text
 ┌─────────────────────────────────────────────────────────────┐
-│               Tamirly.LandingWebUI (Astro App)              │
+│               TamirlyLanding.WebUI (Astro App)              │
 │                                                              │
 │  Depends on:                                                │
 │  ┌─────────────────────────────────────────────────────┐    │
@@ -599,13 +599,13 @@ When multiple configuration files exist, they apply in this order:
    - Apply only to files within that submodule
    - Excluded by root `.prettierignore`
 
-3. **Astro Config** (`/src/presentation/Tamirly.LandingWebUI/astro.config.mjs`)
+3. **Astro Config** (`/src/presentation/TamirlyLanding.WebUI/astro.config.mjs`)
    - Applies only to Astro build process
    - Controls Vite, integrations, build options
 
 4. **TypeScript Configs**
    - Root: N/A (no root tsconfig)
-   - Landing Page: `/src/presentation/Tamirly.LandingWebUI/tsconfig.json`
+   - Landing Page: `/src/presentation/TamirlyLanding.WebUI/tsconfig.json`
    - Submodules: Each has its own tsconfig.json
 
 ### Prettier Configuration

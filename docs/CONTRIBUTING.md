@@ -39,7 +39,7 @@ bun install
 # or: npm install
 
 # Start development server
-cd src/presentation/Tamirly.LandingWebUI
+cd src/presentation/TamirlyLanding.WebUI
 bun run dev
 # or: npm run dev
 ```
@@ -69,7 +69,7 @@ git commit -m "chore: update acore packages"
 
 ### Development Commands
 
-All commands run from `src/presentation/Tamirly.LandingWebUI/`:
+All commands run from `src/presentation/TamirlyLanding.WebUI/`:
 
 ```bash
 bun run dev      # Start dev server (http://localhost:4321)

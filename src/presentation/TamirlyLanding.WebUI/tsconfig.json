@@ -1,0 +1,17 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"],
+  "compilerOptions": {
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js",
+    "paths": {
+      "@tamirly-landing-webui/shared/*": ["./src/shared/*"],
+      "@tamirly-landing-webui/features/*": ["./src/features/*"],
+      "@tamirly-landing-webui/layouts/*": ["./src/layouts/*"],
+      "@packages/acore-astro/*": ["../../../packages/acore-astro/*"],
+      "@packages/acore-solid/*": ["../../../packages/acore-solid/*"],
+      "@packages/acore-ts/*": ["../../../packages/acore-ts/*"]
+    }
+  }
+}

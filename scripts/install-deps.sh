@@ -42,7 +42,7 @@ done
 
 # Landing site dependencies
 acore_log_section "Landing Site"
-cd src/presentation/Tamirly.LandingWebUI
+cd src/presentation/TamirlyLanding.WebUI
 bun install
 acore_log_success "Landing site dependencies installed"
 

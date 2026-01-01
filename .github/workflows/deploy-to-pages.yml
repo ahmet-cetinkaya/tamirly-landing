@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  ASTRO_SITE_ROOT: src/presentation/Tamirly.LandingWebUI
+  ASTRO_SITE_ROOT: src/presentation/TamirlyLanding.WebUI
 
 jobs:
   build:

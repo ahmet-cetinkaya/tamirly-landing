@@ -1,0 +1,76 @@
+---
+import AnimatedSection from "@packages/acore-astro/src/components/AnimatedSection.astro";
+import FeatureCard from "./FeatureCard";
+import { i18nInstance } from "../../../shared/i18n/instance";
+import { TranslationKeys } from "../../../shared/i18n/enums/TranslationKeys";
+import type { Locales } from "../../../shared/i18n/enums/Locales";
+
+interface Props {
+  locale: Locales;
+}
+
+const { locale } = Astro.props;
+const t = (key: TranslationKeys) => i18nInstance.translate(locale, key);
+
+const features = [
+  {
+    icon: "wifi_off",
+    title: t(TranslationKeys.FEATURES_OFFLINE_TITLE),
+    description: t(TranslationKeys.FEATURES_OFFLINE_DESC),
+  },
+  {
+    icon: "search",
+    title: t(TranslationKeys.FEATURES_SEARCH_TITLE),
+    description: t(TranslationKeys.FEATURES_SEARCH_DESC),
+  },
+  {
+    icon: "build",
+    title: t(TranslationKeys.FEATURES_FIXES_TITLE),
+    description: t(TranslationKeys.FEATURES_FIXES_DESC),
+  },
+  {
+    icon: "translate",
+    title: t(TranslationKeys.FEATURES_LANG_TITLE),
+    description: t(TranslationKeys.FEATURES_LANG_DESC),
+  },
+  {
+    icon: "history",
+    title: t(TranslationKeys.FEATURES_HISTORY_TITLE),
+    description: t(TranslationKeys.FEATURES_HISTORY_DESC),
+  },
+  {
+    icon: "light_mode",
+    title: t(TranslationKeys.FEATURES_LED_TITLE),
+    description: t(TranslationKeys.FEATURES_LED_DESC),
+  },
+];
+---
+
+<section class="py-24 bg-background-dark relative" id="features">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <AnimatedSection animation="fade-up">
+        <h2 class="text-3xl font-bold tracking-tight text-text-main sm:text-4xl mb-4">
+          {t(TranslationKeys.FEATURES_TITLE)}
+        </h2>
+        <p
+          class="text-lg text-text-muted"
+          set:html={t(TranslationKeys.FEATURES_DESCRIPTION).replace(
+            "{appName}",
+            '<span class="text-primary font-bold">Tamirly</span>',
+          )}
+        />
+      </AnimatedSection>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        features.map((feature, index) => (
+          <AnimatedSection animation="fade-up" delay={index * 100}>
+            <FeatureCard {...feature} />
+          </AnimatedSection>
+        ))
+      }
+    </div>
+  </div>
+</section>
